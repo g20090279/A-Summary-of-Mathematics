@@ -17,7 +17,7 @@ For a real matrix, the determinant is a real scalar. For a complex matrix, the d
 First of all, let's define
 
 - $a_{i,j}$: the $i$-th row and $j$-th column element of matrix $A$,
-- $A_{i,j}$: the submatrix of $A$ obtained by deleting the $i$-th row and $j$-th column, i.e. the row and column where $a_{i,j}$ is located,
+- $A_{i,j}$: the submatrix of $A$ obtained by deleting the $i$-th row and $j$-th column, i.e. the row and column where $a_{i,j}$ is located, 
 - $\det(A_{i,j})$, a determinant of a ($r$-by-$r$) submatrix is called a *minor* (of size $r$) [Horn 2013, P17]. In this case, $r=n-1$.
 - where $i,j\in[1,2,\cdots,n]$.
 - The determinant of a scalar (1-by-1 matrix) is its own value, i.e. $\det([1])=1$.
