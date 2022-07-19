@@ -1,6 +1,8 @@
-[determinant] [Laplace Expansion] [minor]
+[determinant / 行列式] [Laplace Expansion] [minor]
 
-# Definition
+# Introduction and Definition
+
+Ofent it is useful to use one single number to characterize a multivariate phenomenon. Determinant is one example of this.
 
 Consider a square matrix $A$ with size $n\times n$. $A$ can be a real matrix $A\in\mathbb{R}^{n\times n}$ or a complex matrix $A\in\mathbb{C}^{n\times n}$.
 
@@ -105,7 +107,7 @@ $$\det(A)=\det(A^T).$$
 
 $$\det(AB)=\det(A)\det(B).$$
 
-Therefore, although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$.
+We can notice that although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$. This may be proved using elementary operations that row-reduce both $A$ and $B$.
 
 # References
 
