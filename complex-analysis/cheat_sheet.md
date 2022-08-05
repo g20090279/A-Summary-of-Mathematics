@@ -39,7 +39,7 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d(\boldsymbol{AZB})=\boldsymbol{A}(d\boldsymbol{Z})\boldsymbol{B}$|$\boldsymbol{A}$ and $\boldsymbol{B}$ are constants|
 |$d(a\boldsymbol{Z})=a\ d\boldsymbol{Z}$||
 |$d(\boldsymbol{Z}_0+\boldsymbol{Z}_1)=d\boldsymbol{Z}_0+d\boldsymbol{Z}_1$||
-|$d\left(\text{Tr}{\boldsymbol{Z}}\right)=\text{Tr}{d\boldsymbol{Z}}$||
+|$d\left(\text{Tr}{\boldsymbol{Z}}\right)=\text{Tr}\{d\boldsymbol{Z}\}$||
 |$d(\boldsymbol{Z}_0\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\boldsymbol{Z}_1+\boldsymbol{Z}_0(d\boldsymbol{Z}_1)$||
 |$d(\boldsymbol{Z}_0\otimes\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\otimes\boldsymbol{Z}_1+\boldsymbol{Z}_0\otimes(d\boldsymbol{Z}_1)$|Kronecker product|
 |$d(\boldsymbol{Z}_0\odot\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\odot\boldsymbol{Z}_1+\boldsymbol{Z}_0\odot(d\boldsymbol{Z}_1)$|Hadamard product|
@@ -47,4 +47,4 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d\ \text{reshape}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
 |$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
-|$d\det(\boldsymbol{Z})=\text{Tr}\left\{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+|$d\det(\boldsymbol{Z})=\text{Tr}\left \{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
