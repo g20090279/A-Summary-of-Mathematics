@@ -37,9 +37,9 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |:---:|:---:|
 |$d\boldsymbol{A}=\boldsymbol{0}_{M\times P}$|$\boldsymbol{A}\in\mathbb{C}^{M\times P}$ is a constant matrix that independent of $\boldsymbol{Z}$ or $\boldsymbol{Z}^{*}$|
 |$d(\boldsymbol{AZB})=\boldsymbol{A}(d\boldsymbol{Z})\boldsymbol{B}$|$\boldsymbol{A}$ and $\boldsymbol{B}$ are constants|
-|$d(a\boldsymbol{Z})=ad\boldsymbol{Z}$||
+|$d(a\boldsymbol{Z})=a\ d\boldsymbol{Z}$||
 |$d(\boldsymbol{Z}_0+\boldsymbol{Z}_1)=d\boldsymbol{Z}_0+d\boldsymbol{Z}_1$||
-|$d\left(\text{Tr}\left\{\boldsymbol{Z}\right\}\right)=\text{Tr}\left\{d\boldsymbol{Z}\right\}$||
+|$d\left(\text{Tr}{\boldsymbol{Z}}\right)=\text{Tr}\left\{d\boldsymbol{Z}\right\}$||
 |$d(\boldsymbol{Z}_0\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\boldsymbol{Z}_1+\boldsymbol{Z}_0(d\boldsymbol{Z}_1)$||
 |$d(\boldsymbol{Z}_0\otimes\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\otimes\boldsymbol{Z}_1+\boldsymbol{Z}_0\otimes(d\boldsymbol{Z}_1)$|Kronecker product|
 |$d(\boldsymbol{Z}_0\odot\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\odot\boldsymbol{Z}_1+\boldsymbol{Z}_0\odot(d\boldsymbol{Z}_1)$|Hadamard product|
