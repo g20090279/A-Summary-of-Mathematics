@@ -2,6 +2,8 @@
 
 ## Symbols and sizes of input variables and functions
 
+The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for vector and $\boldsymbol{Z}$ for matrix. Same rules for other letters). Letter like a or b represent constant.
+
 |Symbol|$z$|$\boldsymbol{z}$|$\boldsymbol{Z}$|$f$|$\boldsymbol{f}$|$\boldsymbol{F}$|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Size|$1\times1$|$N\times1$|$N\times Q$|$1\times1$|$M\times1$|$M\times P$|
