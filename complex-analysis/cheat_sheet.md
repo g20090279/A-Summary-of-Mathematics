@@ -11,14 +11,14 @@
 |Function type|$z,z^*\in\mathbb{C}$|$\boldsymbol{z},\boldsymbol{z}^*\in\mathbb{C}^{N\times1}$|$\boldsymbol{Z},\boldsymbol{Z}^*\in\mathbb{C}^{N\times Q}$|
 |:---:|:---:|:---:|:---:|
 
-# Definitions
+# Some Definitions
 
 |Name of Definition|Mathematical Description|
 |:---:|:---:|
 |Analytic Function (also called complex differentiable, holomorphic, regular)|The function $f$ is an analytic function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where $\mathcal{D}$ is a subset of $\mathbb{C}$ and the domain of the function.|
-|Formal Derivation / Wirtinger Derivatives|Let $z=x+iy$, where $x,y\in\mathbb{R}$<br/> $\begin{aligned}\frac{\partial}{\partial z}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)\\\frac{\partial}{\partial z^*}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)\end{aligned}$ <br /> The variables $z$ and $z^*$ are treated as independent variables.|
+|Formal Derivation / Wirtinger Derivatives|Let $z=x+iy$, where $x,y\in\mathbb{R}$ <br /> $$\begin{aligned}\frac{\partial}{\partial z}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)\\\frac{\partial}{\partial z^*}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)\end{aligned}$$ <br /> The variables $z$ and $z^*$ are treated as independent variables.|
 
-# Procedure for finding complex differentials
+# Procedure for Finding Complex Differentials
 
 Consider a complex matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is
 
