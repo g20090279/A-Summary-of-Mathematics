@@ -37,12 +37,12 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d(\boldsymbol{AZB})=\boldsymbol{A}(d\boldsymbol{Z})\boldsymbol{B}$|$\boldsymbol{A}$ and $\boldsymbol{B}$ are constants|
 |$d(a\boldsymbol{Z})=ad\boldsymbol{Z}$||
 |$d(\boldsymbol{Z}_0+\boldsymbol{Z}_1)=d\boldsymbol{Z}_0+d\boldsymbol{Z}_1$||
-|$d\left(\mathrm{Tr}\left\{\boldsymbol{Z}\right\}\right)=\mathrm{Tr}\left\{d\boldsymbol{Z}\right\}$||
+|$d\left(\text{Tr}\left\{\boldsymbol{Z}\right\}\right)=\text{Tr}\left\{d\boldsymbol{Z}\right\}$||
 |$d(\boldsymbol{Z}_0\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\boldsymbol{Z}_1+\boldsymbol{Z}_0(d\boldsymbol{Z}_1)$||
 |$d(\boldsymbol{Z}_0\otimes\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\otimes\boldsymbol{Z}_1+\boldsymbol{Z}_0\otimes(d\boldsymbol{Z}_1)$|Kronecker product|
 |$d(\boldsymbol{Z}_0\odot\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\odot\boldsymbol{Z}_1+\boldsymbol{Z}_0\odot(d\boldsymbol{Z}_1)$|Hadamard product|
 |$d\boldsymbol{Z}^{-1}=-\boldsymbol{Z}^{-1}(d\boldsymbol{Z})\boldsymbol{Z}^{-1}$|matrix inverse|
-|$d\text{reshpe}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
-|$d\boldsymbol{Z}^*=(d\boldsymbol{Z})^*$|conjugate|
+|$d\ \text{reshape}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
+|$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
-|$d\det(\boldsymbol{Z})=\mathrm{Tr}\left\{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+|$d\det(\boldsymbol{Z})=\text{Tr}\left\{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
