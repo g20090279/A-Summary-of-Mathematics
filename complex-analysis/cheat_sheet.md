@@ -47,4 +47,4 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d\ \text{reshape}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
 |$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
-|$d\det(\boldsymbol{Z})=\text{Tr}\left \{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+|$d\det(\boldsymbol{Z})=\text{Tr}\left \\{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
