@@ -16,7 +16,7 @@
 |Name of Definition|Mathematical Description|
 |:---:|:---:|
 |Analytic Function (also called complex differentiable, holomorphic, regular)|The function $f$ is an analytic function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where $\mathcal{D}$ is a subset of $\mathbb{C}$ and the domain of the function.|
-|Formal Derivation / Wirtinger Derivatives|Let $z=x+iy$, where $x,y\in\mathbb{R}$ <br /> $$\begin{aligned}\frac{\partial}{\partial z}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)\\\frac{\partial}{\partial z^*}f(z,z^*)=&\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)\end{aligned}$$ <br /> The variables $z$ and $z^*$ are treated as independent variables.|
+|Formal Derivation / Wirtinger Derivatives|Let $z=x+iy$, where $x,y\in\mathbb{R}$ <br /> $\begin{aligned}\frac{\partial}{\partial z}f(z,z^{\*})=&\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)\\\frac{\partial}{\partial z^{\*}}f(z,z^{*})=&\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)\end{aligned}$ <br /> The variables $z$ and $z^*$ are treated as independent variables.|
 
 # Procedure for Finding Complex Differentials
 
