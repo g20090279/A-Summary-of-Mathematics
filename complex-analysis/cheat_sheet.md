@@ -12,9 +12,27 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 
 |Equality|Comment|
 |:---:|:---:|
+|$(\boldsymbol{AB})^{-1}=\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$||
+|$(\boldsymbol{ABC}...)^{-1}=...\boldsymbol{C}^{-1}\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$||
+|$\left(\boldsymbol{A}^T\right)^{-1}$||
+|$(\boldsymbol{A}+\boldsymbol{B})^T=\boldsymbol{A}^T+\boldsymbol{B}^T$||
+|$(\boldsymbol{AB})^{T}=\boldsymbol{B}^{T}\boldsymbol{A}^{T}$||
+|$(\boldsymbol{ABC}...)^T=...\boldsymbol{C}^{-T}\boldsymbol{B}^{T}\boldsymbol{A}^{T}$||
+|$\left(\boldsymbol A^H\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^H$||
+|$(\boldsymbol{A}+\boldsymbol{B})^H=\boldsymbol{A}^H+\boldsymbol{B}^H$||
+|$(\boldsymbol{AB})^H=\boldsymbol{B}^H\boldsymbol{A}^H$||
+|$(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$||
+|The definition of Trace||
+|$\text{Tr}(\boldsymbol{A})=\sum_i A_{ii}$||
+|$\text{Tr}(\boldsymbol{A})=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$||
 |$\text{Tr}\left\{\boldsymbol{A}^T\right\}=\text{Tr}\left\{\boldsymbol{A}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$|
 |$\text{Tr}\left\{\boldsymbol{AB}\right\}=\text{Tr}\left\{\boldsymbol{BA}\right\}$|$\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$|
+|$\text{Tr}(\boldsymbol{A}+\boldsymbol{B})=\text{Tr}(\boldsymbol{A})+\text{Tr}(\boldsymbol{B})$||
+|$\text{Tr}(\boldsymbol{ABC})=\text{Tr}(\boldsymbol{BCA})=\text{Tr}(\boldsymbol{CAB})$||
+|$\boldsymbol{a}^T\boldsymbol{a}=\text{Tr}(\boldsymbol{aa}^T)$||
 |$\text{Tr}\left\{\boldsymbol{A}^T\boldsymbol{B}\right\}=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$|connection between trace and vectorization|
+|The definition of Determinant|Let $\boldsymbol{A}$ be an $n\times n$ matrix.|
+|||
 
 ## Classification of function
 
@@ -36,6 +54,10 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 |Formal Derivatives of Vector Functions w.r.t. Vectors|$\boldsymbol{f}:\mathbb{C}^{N\times1}\times\mathbb{C}^{N\times1}\rightarrow\mathbb{C}^{M\times1}$. The derivative of two row vector variables $\boldsymbol{z}^T$ and $\boldsymbol{z}^H$ are sized as $M\times N$<br/>$\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}}f_{M-1} \end{bmatrix}$ <br/> and <br/> $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$<br/> Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$.|
 |Formal Derivative of Matrix Functions w.r.t. Scalars|$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$. The derivative of $\boldsymbol{F}$ w.r.t. the scalar $z\in\mathbb{C}$ is <br/> $\frac{\partial\boldsymbol{F}}{\partial z}=\begin{bmatrix}\frac{\partial f_{0,0}}{\partial z} & \cdots & \frac{\partial f_{0,P-1}}{\partial z}\\\vdots&\ddots&\vdots\\\frac{\partial f_{M-1,0}}{\partial z}&\cdots&\frac{\partial f_{M-1,P-1}}{\partial z}\end{bmatrix}$, <br/> which has size $M\times P$.|
 
+# Some theorems
+
+
+
 # Procedure for Finding Complex Differentials
 
 Consider a complex matrix function $\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$ with two input complex-valued matrix variables $\boldsymbol{Z}_0\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{Z}_1\in\mathbb{C}^{N\times Q}$, the difference of a infinitesimal increment is
@@ -47,7 +69,7 @@ $$\begin{aligned}
 
 The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\boldsymbol{Z}_1$. The differential is then given by the **first-order term**.
 
-# Basic complex differential properties
+## Basic complex differential properties
 
 |Properties|Comment|
 |:---:|:---:|
@@ -65,7 +87,7 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
 |$d\det(\boldsymbol{Z})=\text{Tr}\left \{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
 
-# Identification table and examples for the derivative
+## Identification table and examples for the derivative
 
 Check the definition of derivative with respect to a matrix. The following table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$.
 
