@@ -2,11 +2,19 @@
 
 ## Symbols and sizes of input variables and functions
 
-The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for vector and $\boldsymbol{Z}$ for matrix. Same rules for other letters). Letter like a or b represent constant.
+The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for vector and $\boldsymbol{Z}$ for matrix. Same rules for other letters). Letter like $a$ or $b$ represent constant.
 
 |Symbol|$z$|$\boldsymbol{z}$|$\boldsymbol{Z}$|$f$|$\boldsymbol{f}$|$\boldsymbol{F}$|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Size|$1\times1$|$N\times1$|$N\times Q$|$1\times1$|$M\times1$|$M\times P$|
+
+## Properties of basic operators
+
+|Equality|Comment|
+|:---:|:---:|
+|$\text{Tr}\left\{\boldsymbol{A}^T\right\}=\text{Tr}\left\{\boldsymbol{A}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$|
+|$\text{Tr}\left\{\boldsymbol{AB}\right\}=\text{Tr}\left\{\boldsymbol{BA}\right\}$|$\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$|
+|$\text{Tr}\left\{\boldsymbol{A}^T\boldsymbol{B}\right\}=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$|connection between trace and vectorization|
 
 ## Classification of function
 
@@ -17,8 +25,16 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 
 |Name of Definition|Mathematical Description|
 |:---:|:---:|
-|Analytic Function (also called complex differentiable, holomorphic, regular)|The function $f$ is an analytic function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where $\mathcal{D}$ is a subset of $\mathbb{C}$ and the domain of the function.|
-|Formal Derivation / Wirtinger Derivatives | Let $z=x+iy$, where $x,y\in\mathbb{R}$.<br/> $\frac{\partial}{\partial z}f(z,z^{\ast})=\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)$ <br/> $\frac{\partial}{\partial z^\ast}f(z,z^\ast)=\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)$ <br /> The variables $z$ and $z^\ast$ are treated as independent variables.|
+|a complex scalar|$z=x+iy\in\mathbb{C}$, where the real part is $\text{Re}\{z\}$ and the imaginary part is $\text{Im}\{z\}=y$.|
+|real part|$x=\frac{z+z^\ast}{2}$|
+|imaginary part|$y=\frac{z-z^\ast}{2i}$|
+|complex differentials (complex scalar as example)|$dz=dx+idy$, $dz^\ast=dx-idy$<br/>which lead to<br/>$dx=\frac{dz+dz^\ast}{2}$, $dy=\frac{dz-dz^\ast}{2i}$, $dz^\ast=(dz)^\ast$<br/>When $\boldsymbol{Z}$ is a matrix, $\boldsymbol{X}$ and $\boldsymbol{Y}$ are of same size, i.e. $N\times Q$.| 
+|analytic function (also called complex differentiable, holomorphic, regular)|The function $f$ is an analytic function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where $\mathcal{D}$ is a subset of $\mathbb{C}$ and the domain of the function.|
+|basic assumption: real part and imaginary part are independent|$df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$|
+|formal derivation / Wirtinger Derivatives | Let $z=x+iy$, where $x,y\in\mathbb{R}$.<br/> $\frac{\partial}{\partial z}f=\frac{1}{2}\left(\frac{\partial}{\partial x}f-i\frac{\partial}{\partial y}f\right)$ <br/> $\frac{\partial}{\partial z^\ast}f=\frac{1}{2}\left(\frac{\partial}{\partial x}f+i\frac{\partial}{\partial y}f\right)$ <br /> The variables $z$ and $z^\ast$ are treated as independent variables. (Formulated by replacing $dx$ and $dy$ in basic assumption with complex differentials)|
+|Formal Derivative of Matrix Function w.r.t. Complex Matrices |$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$, the derivative of $\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ with respect to $\boldsymbol{Z}\in\mathbf{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}$, and that with respect to $\boldsymbol{Z}^{\ast}\in\mathbb{C}^{N\times Q}$ is denoted by $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}$. The size of both these derivatives is $MP\times NQ$.<br/>$d\ \text{vec}(\boldsymbol{F})=(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})d\ \text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})d\ \text{vec}(\boldsymbol{Z}^\ast)$<br/>The two derivatives are called the Jacobian matrices of $\boldsymbol{F}$ with respect to $\boldsymbol{Z}$ or $\boldsymbol{Z}^\ast$.|
+|Formal Derivatives of Vector Functions w.r.t. Vectors|$\boldsymbol{f}:\mathbb{C}^{N\times1}\times\mathbb{C}^{N\times1}\rightarrow\mathbb{C}^{M\times1}$. The derivative of two row vector variables $\boldsymbol{z}^T$ and $\boldsymbol{z}^H$ are sized as $M\times N$<br/>$\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}}f_{M-1} \end{bmatrix}$ <br/> and <br/> $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\begin{bmatrix}\frac{\partial}{\partial z_0^\ast}f_0 & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_0 \\ \vdots &&\vdots \\ \frac{\partial}{\partial z_0^\ast}f_{M-1} & \cdots & \frac{\partial}{\partial z_{N-1}^\ast}f_{M-1} \end{bmatrix}.$<br/> Note that $\frac{\partial}{\partial\boldsymbol{z}^T}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}$ and $\frac{\partial}{\partial\boldsymbol{z}^H}\boldsymbol{f}=\mathcal{D}_{\boldsymbol{z}^*}\boldsymbol{f}$.|
+|Formal Derivative of Matrix Functions w.r.t. Scalars|$\boldsymbol{F}:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{C}^{M\times P}$. The derivative of $\boldsymbol{F}$ w.r.t. the scalar $z\in\mathbb{C}$ is <br/> $\frac{\partial\boldsymbol{F}}{\partial z}=\begin{bmatrix}\frac{\partial f_{0,0}}{\partial z} & \cdots & \frac{\partial f_{0,P-1}}{\partial z}\\\vdots&\ddots&\vdots\\\frac{\partial f_{M-1,0}}{\partial z}&\cdots&\frac{\partial f_{M-1,P-1}}{\partial z}\end{bmatrix}$, <br/> which has size $M\times P$.|
 
 # Procedure for Finding Complex Differentials
 
@@ -39,7 +55,7 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d(\boldsymbol{AZB})=\boldsymbol{A}(d\boldsymbol{Z})\boldsymbol{B}$|$\boldsymbol{A}$ and $\boldsymbol{B}$ are constants|
 |$d(a\boldsymbol{Z})=a\ d\boldsymbol{Z}$||
 |$d(\boldsymbol{Z}_0+\boldsymbol{Z}_1)=d\boldsymbol{Z}_0+d\boldsymbol{Z}_1$||
-|$d\left(\text{Tr}\left\\{\boldsymbol{Z}\right\\}\right)=\text{Tr}\left\\{d\boldsymbol{Z}\right\\}$||
+|$d\left(\text{Tr}\left\{\boldsymbol{Z}\right\}\right)=\text{Tr}\left\{d\boldsymbol{Z}\right\}$||
 |$d(\boldsymbol{Z}_0\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\boldsymbol{Z}_1+\boldsymbol{Z}_0(d\boldsymbol{Z}_1)$||
 |$d(\boldsymbol{Z}_0\otimes\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\otimes\boldsymbol{Z}_1+\boldsymbol{Z}_0\otimes(d\boldsymbol{Z}_1)$|Kronecker product|
 |$d(\boldsymbol{Z}_0\odot\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\odot\boldsymbol{Z}_1+\boldsymbol{Z}_0\odot(d\boldsymbol{Z}_1)$|Hadamard product|
@@ -47,4 +63,70 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 |$d\ \text{reshape}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
 |$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
-|$d\det(\boldsymbol{Z})=\text{Tr}\left \\{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+|$d\det(\boldsymbol{Z})=\text{Tr}\left \{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+
+# Identification table and examples for the derivative
+
+Check the definition of derivative with respect to a matrix. The following table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$.
+
+|Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
+|:---:|:---:|:---:|:---:|:---:|
+|$f(z,z^\ast)$|$df=a_0dz+a_1dz^*$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
+|$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$df=\boldsymbol{a}_0d\boldsymbol{z}+\boldsymbol{a}_1\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_1$|$1\times N$|
+|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{vec}^T(\boldsymbol{A}_0)d\ \text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\ \text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_0)$|$\mathcal{D}_{\boldsymbol{Z}^\ast}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_1)$|$1\times NQ$|
+|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{Tr}\{\mathbf{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\}$|
+
+## Complex-valued derivatives of $f(\boldsymbol{Z},\boldsymbol{Z}^*)$
+
+### Definition 1: use the general form of formal derivative
+
+$$df=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast)$$
+
+### Definition 2: an alternative to Definition 1
+
+For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}_{\boldsymbol{Z}^*}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
+
+$$\begin{aligned}
+    \frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}
+        \frac{\partial}{\partial z_{0,0}}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}}f\\
+        \vdots & \ddots & \vdots \\
+        \frac{\partial}{\partial z_{N-1,0}}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}}f\\
+    \end{bmatrix},\\
+     \frac{\partial}{\partial\boldsymbol{Z}^\ast}f=&\begin{bmatrix}
+        \frac{\partial}{\partial z_{0,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{0,Q-1}^\ast}f\\
+        \vdots & \ddots & \vdots \\
+        \frac{\partial}{\partial z_{N-1,0}^\ast}f & \cdots & \frac{\partial}{\partial z_{N-1,Q-1}^\ast}f\\
+    \end{bmatrix}.\\
+\end{aligned}$$
+
+$\frac{\partial}{\partial\boldsymbol{Z}}f$ and $\frac{\partial}{\partial\boldsymbol{Z}^\ast}$ are called the *gradient* of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$.
+
+### Connection between definition 1 and definition 2
+
+From the basic property of trace, we have
+
+$$\begin{aligned}
+df&=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast)\\
+&=\text{Tr}\left\{\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\right\},
+\end{aligned}$$
+
+which links the formal derivative of size $1\times NQ$
+
+$$\begin{aligned}
+   \mathcal{D}_{\boldsymbol{Z}}f&=\text{vec}^T(\boldsymbol{A}_0)\\ 
+   \mathcal{D}_{\boldsymbol{Z}^\ast}f&=\text{vec}^T(\boldsymbol{A}_1)
+\end{aligned}$$
+
+to the gradients of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$ of size $N\times Q$
+
+$$\begin{aligned}
+   \frac{\partial}{\partial\boldsymbol{Z}}f&=\boldsymbol{A}_0\\ 
+   \frac{\partial}{\partial\boldsymbol{Z}^\ast}f&=\boldsymbol{A}_1
+\end{aligned}$$
+
+by the connection
+
+$$\begin{aligned}
+   \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+   \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+\end{aligned}$$
