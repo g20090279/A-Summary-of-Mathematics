@@ -22,7 +22,7 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 |$(\boldsymbol{A}+\boldsymbol{B})^H=\boldsymbol{A}^H+\boldsymbol{B}^H$||
 |$(\boldsymbol{AB})^H=\boldsymbol{B}^H\boldsymbol{A}^H$||
 |$(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$||
-|*The definition of Trace*||
+|*The definition of **Trace***|Trace is only defined for a square matrix.|
 |$\text{Tr}(\boldsymbol{A})=\sum_i A_{ii}$||
 |$\text{Tr}(\boldsymbol{A})=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$||
 |$\text{Tr}\left\{\boldsymbol{A}^T\right\}=\text{Tr}\left\{\boldsymbol{A}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$|
@@ -31,7 +31,7 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 |$\text{Tr}(\boldsymbol{ABC})=\text{Tr}(\boldsymbol{BCA})=\text{Tr}(\boldsymbol{CAB})$||
 |$\boldsymbol{a}^T\boldsymbol{a}=\text{Tr}(\boldsymbol{aa}^T)$||
 |$\text{Tr}\left\{\boldsymbol{A}^T\boldsymbol{B}\right\}=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$|connection between trace and vectorization|
-|The definition of Determinant|Let $\boldsymbol{A}$ be an $n\times n$ matrix.|
+|*The definition of **Determinant***|Let $\boldsymbol{A}$ be an $n\times n$ matrix.|
 |||
 
 ## Classification of function
@@ -40,6 +40,8 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 |:---:|:---:|:---:|:---:|
 
 # Some Definitions
+
+***Table:** Some definitions.*
 
 |Name of Definition|Mathematical Description|
 |:---:|:---:|
@@ -77,6 +79,8 @@ The First-order() term depends on the first order of $d\boldsymbol{Z}_0$ or $d\b
 
 Take the matrix form $\boldsymbol{Z}$ as example.
 
+***Table:** Basic complex differential properties.*
+
 |Properties|Comment|
 |:---:|:---:|
 |$d\boldsymbol{A}=\boldsymbol{0}_{M\times P}$|$\boldsymbol{A}\in\mathbb{C}^{M\times P}$ is a constant matrix that independent of $\boldsymbol{Z}$ or $\boldsymbol{Z}^{*}$|
@@ -97,6 +101,8 @@ Take the matrix form $\boldsymbol{Z}$ as example.
 
 Check the definition of derivative with respect to a matrix. The following table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
 
+***Table:** Identification table.*
+
 |Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
 |:---:|:---:|:---:|:---:|:---:|
 |$f(z,z^\ast)$|$df=a_0dz+a_1dz^*$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
@@ -116,7 +122,7 @@ Check the definition of derivative with respect to a matrix. The following table
 
 ## Complex-Valued Derivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
 
-Table: Complex-valued derivatives of functions of the type $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
+***Table**: Complex-valued derivatives of functions of the type $f(\boldsymbol{z},\boldsymbol{z}^\ast)$*
 
 |$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|Differential $df$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|
 |:---:|:---:|:---:|:---:|
@@ -130,7 +136,9 @@ Table: Complex-valued derivatives of functions of the type $f(\boldsymbol{z},\bo
 
 ### Definition 1: use the general form of formal derivative
 
-$$df=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast)$$
+$$df=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast),$$
+
+where $\boldsymbol{A}_0,\boldsymbol{A}_1,\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$.
 
 ### Definition 2: an alternative to Definition 1
 
@@ -180,3 +188,31 @@ $$\begin{aligned}
    \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
    \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
 \end{aligned}$$
+
+***Table:** Complex-valued derivatives of functions of the type $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$*. 
+
+Note:
+
+1. Assume the matrices have suitable dimension for the matrix multiplication).
+2. Trace is only defined for a square matrix.
+
+|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$\frac{\partial}{\partial\boldsymbol{Z}}f$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f$|
+|:---:|:---:|:---:|
+| $\text{Tr}\{\boldsymbol{Z}\}$ | $\boldsymbol{I}_N$ | $\boldsymbol{0}_{N\times N}$ |
+| $\text{Tr}\{\boldsymbol{Z}^{*}\}$ | $\boldsymbol{0}_{N\times N}$| $\boldsymbol{I}_N$ |
+| $\text{Tr}\{\boldsymbol{AZ}\}$ | $\boldsymbol{A}^T$ | $\boldsymbol{0}_{N\times Q}$ |
+| $\text{Tr}\{\boldsymbol{ZA}_0\boldsymbol{Z}^T\boldsymbol{A}_1\}$ | $\boldsymbol{A}^T_1\boldsymbol{ZA}_0^T+\boldsymbol{A}_1\boldsymbol{ZA}_0$ | $\boldsymbol{0}_{N\times Q}$ |
+| $\text{Tr}\{\boldsymbol{ZA}_0\boldsymbol{Z}\boldsymbol{A}_1\}$ | $\boldsymbol{A}^T_1\boldsymbol{Z}^T\boldsymbol{A}_0^T+\boldsymbol{A}_0^T\boldsymbol{Z}^T\boldsymbol{A}_1^T$ | $\boldsymbol{0}_{N\times Q}$ |
+| $\text{Tr}\{\boldsymbol{ZA}_0\boldsymbol{Z}^H\boldsymbol{A}_1\}$ | $\boldsymbol{A}^T_1\boldsymbol{Z}^\ast\boldsymbol{A}_0^T$ | $\boldsymbol{A}_1\boldsymbol{Z}\boldsymbol{A}_0$ |
+| $\text{Tr}\{\boldsymbol{ZA}_0\boldsymbol{Z}^\ast\boldsymbol{A}_1\}$ | $\boldsymbol{A}^T_1\boldsymbol{Z}^H\boldsymbol{A}_0^T$ | $\boldsymbol{A}_0^T\boldsymbol{Z}^T\boldsymbol{A}_1^T$ |
+| $\text{Tr}\{\boldsymbol{AZ}^{-1}\}$ | $-\left(\boldsymbol{Z}^T\right)^{-1}\boldsymbol{A}^T\left(\boldsymbol{Z}^T\right)^{-1}$ | $\boldsymbol{0}_{N\times N}$ |
+| $\text{Tr}\{\boldsymbol{Z}^p\}$ | $p\left(\boldsymbol{Z}^T\right)^{p-1}$ | $\boldsymbol{0}_{N\times N}$ |
+| $\det(\boldsymbol{Z})$ | $\det(\boldsymbol{Z})\left(\boldsymbol{Z}^T\right)^{-1}$ | $\boldsymbol{0}_{N\times N}$ |
+| $\det(\boldsymbol{A}_0\boldsymbol{ZA}_1)$ | $\det(\boldsymbol{A}_0\boldsymbol{ZA}_1)\boldsymbol{A}_0^T\left(\boldsymbol{A}_1^T\boldsymbol{Z}^T\boldsymbol{A}_0^T\right)^{-1}\boldsymbol{A}_1^T$ | $\boldsymbol{0}_{N\times Q}$ |
+| $\det\left(\boldsymbol{Z}^2\right)$ | $2\det^2(\boldsymbol{Z})\left(\boldsymbol{Z}^T\right)^{-1}$ | $\boldsymbol{0}_{N\times N}$ |
+| $\det\left(\boldsymbol{ZZ}^T\right)$ | $2\det\left(\boldsymbol{ZZ}^T\right)\left(\boldsymbol{ZZ}^T\right)^{-1}\boldsymbol{Z}$ | $\boldsymbol{0}_{N\times Q}$ |
+| $\det\left(\boldsymbol{ZZ}^\ast\right)$ | $\det\left(\boldsymbol{ZZ}^\ast\right)\left(\boldsymbol{Z}^H\boldsymbol{Z}^T\right)^{-1}\boldsymbol{Z}^H$ | $\det\left(\boldsymbol{ZZ}^\ast\right)\boldsymbol{Z}^T\left(\boldsymbol{Z}^H\boldsymbol{Z}^T\right)^{-1}$ |
+| $\det\left(\boldsymbol{ZZ}^H\right)$ | $\det\left(\boldsymbol{ZZ}^H\right)\left(\boldsymbol{Z}^\ast\boldsymbol{Z}^T\right)^{-1}\boldsymbol{Z}^\ast$ | $\det\left(\boldsymbol{ZZ}^H\right)\boldsymbol{Z}^T\left(\boldsymbol{Z}\boldsymbol{Z}^H\right)^{-1}\boldsymbol{Z}$ |
+| $\det\left(\boldsymbol{Z}^p\right)$ | $p\det^p(\boldsymbol{Z})\left(\boldsymbol{Z}^T\right)^{-1}$ | $\boldsymbol{0}_{N\times N}$ |
+| $\lambda(\boldsymbol{Z})$ | $\frac{\boldsymbol{v_0}^{\ast}\boldsymbol{u}_0^T}{\boldsymbol{v}_0^H\boldsymbol{u}_0}$ | $\boldsymbol{N\times N}$ |
+| $\lambda^\ast(\boldsymbol{Z})$ | $\boldsymbol{N\times N}$ | $\frac{\boldsymbol{v_0}\boldsymbol{u}_0^H}{\boldsymbol{v}_0^T\boldsymbol{u}_0^{\ast}}$ |
