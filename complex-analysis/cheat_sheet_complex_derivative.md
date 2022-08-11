@@ -239,10 +239,12 @@ Note:
 
 First of all, we prove $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
 
-$$\begin{aligned}
+```math
+\begin{aligned}
    df&=(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
    df&=df^\ast=(\mathcal{D}_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast)+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
-\end{aligned}$$
+\end{aligned}
+```
 
 It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}_{\boldsymbol{Z}}f)^\ast$, we have
 
