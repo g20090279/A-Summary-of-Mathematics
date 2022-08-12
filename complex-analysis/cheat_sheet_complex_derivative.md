@@ -30,7 +30,7 @@ $i$ represents usually the imaginary unit. $d$ represents derivative. $\partial$
 | $(\boldsymbol{AB})^H=\boldsymbol{B}^H\boldsymbol{A}^H$ | |
 | $(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$ | |
 | *The properties of **Trace*** | Trace is only defined for a square matrix. |
-| $\text{Tr}(\boldsymbol{A})=\sum_i A_{ii}$ | |
+| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i A_{ii}$ | |
 | $\text{Tr}(\boldsymbol{A})=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$ | |
 | $\text{Tr}\left\{\boldsymbol{A}^T\right\}=\text{Tr}\left\{\boldsymbol{A}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ |
 | $\text{Tr}\left\{\boldsymbol{AB}\right\}=\text{Tr}\left\{\boldsymbol{BA}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$ |
