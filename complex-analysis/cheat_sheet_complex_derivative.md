@@ -198,10 +198,10 @@ $$\begin{aligned}
 
 by the connection
 
-$$\begin{aligned}
+$$\begin{align}
    \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
    \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
-\end{aligned}$$
+\end{align}$$
 
 ***Table:** Complex-valued derivatives of functions of the type* $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$. 
 
