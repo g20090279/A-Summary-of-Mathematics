@@ -184,23 +184,23 @@ df&=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\bold
 
 which links the formal derivative of size $1\times NQ$
 
-$$\begin{aligned}
-   \mathcal{D}_{\boldsymbol{Z}}f&=\text{vec}^T(\boldsymbol{A}_0)\\ 
+$$\begin{align}
+   \mathcal{D}_{\boldsymbol{Z}}f&=\text{vec}^T(\boldsymbol{A}_0) 
    \mathcal{D}_{\boldsymbol{Z}^\ast}f&=\text{vec}^T(\boldsymbol{A}_1)
-\end{aligned}$$
+\end{align}$$
 
 to the gradients of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$ of size $N\times Q$
 
-$$\begin{aligned}
+$$\begin{align}
    \frac{\partial}{\partial\boldsymbol{Z}}f&=\boldsymbol{A}_0\\ 
    \frac{\partial}{\partial\boldsymbol{Z}^\ast}f&=\boldsymbol{A}_1
-\end{aligned}$$
+\end{align}$$
 
 by the connection
 
 $$\begin{align}
-   \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
-   \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+   \mathcal{D}\_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+   \mathcal{D}\_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
 \end{align}$$
 
 ***Table:** Complex-valued derivatives of functions of the type* $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$. 
