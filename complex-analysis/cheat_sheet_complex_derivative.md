@@ -241,15 +241,15 @@ First of all, we prove $\mathcal{D}\_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}\_{
 
 $$
 \begin{aligned}
-   df&=(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
-   df&=df^\ast=(\mathcal{D}_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast)+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
+   df&=(\mathcal{D}\_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
+   df&=df^\ast=(\mathcal{D}\_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast)+(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
 \end{aligned}
 $$
 
 It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}\_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}\_{\boldsymbol{Z}}f)^\ast$, we have
 
 $$
-df=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.
+df=2\text{Re}\lbrace(\mathcal{D}\_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.
 $$
 
 Inside the $\text{Re}(\cdot)$ function is a row vector multiplied by a column vector, which is can be written as a Euclidean inner product of two column vectors, i.e.
@@ -259,9 +259,11 @@ $$\boldsymbol{a}_0^H\boldsymbol{a}_1=\langle\boldsymbol{a}_0,\boldsymbol{a}_1\ra
 Taking the $\text{Re}(\cdot)$ function on both sides, we can write it as
 
 $$\text{Re}\lbrace\boldsymbol{a}_0^H\boldsymbol{a}_1\rbrace=\left\langle\begin{bmatrix}
-  \text{Re}\{\boldsymbol{a}_0\} \\ \text{Im}\{\boldsymbol{a}_0\}
+  \text{Re}\lbrace\boldsymbol{a}_0\rbrace \\
+  \text{Im}\lbrace\boldsymbol{a}_0\rbrace
 \end{bmatrix},\begin{bmatrix}
-  \text{Re}\{\boldsymbol{a}_1\} \\ \text{Im}\{\boldsymbol{a}_1\}
+  \text{Re}\lbrace\boldsymbol{a}_1\rbrace \\
+  \text{Im}\lbrace\boldsymbol{a}_1\rbrace
 \end{bmatrix}\right\rangle.$$
 
 Therefore, the differential of $f$ becomes
