@@ -156,7 +156,7 @@ where $\boldsymbol{A}_0,\boldsymbol{A}_1,\boldsymbol{Z}\in\mathbb{C}^{N\times Q}
 
 ### Definition 2: an alternative to Definition 1
 
-For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}\_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}\_{\boldsymbol{Z}^*}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
+For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}\_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}\_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
 
 $$\begin{aligned}
     \frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}
@@ -239,14 +239,18 @@ Note:
 
 First of all, we prove $\mathcal{D}\_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}\_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
 
-$$\begin{aligned}
+$$
+\begin{aligned}
    df&=(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
    df&=df^\ast=(\mathcal{D}_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast)+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
-\end{aligned}$$
+\end{aligned}
+$$
 
-It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}_{\boldsymbol{Z}}f)^\ast$, we have
+It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}\_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}\_{\boldsymbol{Z}}f)^\ast$, we have
 
-$$df=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.$$
+$$
+df=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.
+$$
 
 Inside the $\text{Re}(\cdot)$ function is a row vector multiplied by a column vector, which is can be written as a Euclidean inner product of two column vectors, i.e.
 
