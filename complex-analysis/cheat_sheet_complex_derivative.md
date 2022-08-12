@@ -31,13 +31,13 @@ $i$ represents usually the imaginary unit. $d$ represents derivative. $\partial$
 | $(\boldsymbol{ABC}...)^H=...\boldsymbol{C}^H\boldsymbol{B}^H\boldsymbol{A}^H$ | |
 | *The properties of **Trace*** | Trace is only defined for a square matrix. |
 | $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i A_{ii}$ | |
-| $\text{Tr}(\boldsymbol{A})=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$ | |
-| $\text{Tr}\left\{\boldsymbol{A}^T\right\}=\text{Tr}\left\{\boldsymbol{A}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ |
-| $\text{Tr}\left\{\boldsymbol{AB}\right\}=\text{Tr}\left\{\boldsymbol{BA}\right\}$ | $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$ |
+| $\text{Tr}\lbrace\boldsymbol{A}\rbrace=\sum_i\lambda_i,\quad\lambda_i=\text{eig}(\boldsymbol{A})$ | |
+| $\text{Tr}\lbrace\boldsymbol{A}^T\rbrace=\text{Tr}\lbrace\boldsymbol{A}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ |
+| $\text{Tr}\lbrace\boldsymbol{AB}\rbrace=\text{Tr}\lbrace\boldsymbol{BA}\rbrace$ | $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ and $\boldsymbol{B}\in\mathbb{C}^{Q\times N}$ |
 | $\text{Tr}(\boldsymbol{A}+\boldsymbol{B})=\text{Tr}(\boldsymbol{A})+\text{Tr}(\boldsymbol{B})$ | |
 | $\text{Tr}(\boldsymbol{ABC})=\text{Tr}(\boldsymbol{BCA})=\text{Tr}(\boldsymbol{CAB})$ | |
 | $\boldsymbol{a}^T\boldsymbol{a}=\text{Tr}(\boldsymbol{aa}^T)$ | |
-| $\text{Tr}\left\{\boldsymbol{A}^T\boldsymbol{B}\right\}=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$ | Connection between trace and vectorization |
+| $\text{Tr}\lbrace\boldsymbol{A}^T\boldsymbol{B}\rbrace=\text{vec}^T(\boldsymbol{A})\text{vec}(\boldsymbol{B})$ | Connection between trace and vectorization |
 | *The definition of **Determinant*** | Let $\boldsymbol{A}$ be an $n\times n$ matrix. |
 | $\det(\boldsymbol{A})=\prod_{i}\lambda_i$ | $\lambda_i=\text{eig}(\boldsymbol{A})$ is the eigenvalue of matrix $\boldsymbol{A}$. |
 | $\det(c\boldsymbol{A})=c^N\det(\boldsymbol{A})$ | if $\boldsymbol{A}=\mathbb{C}^{N\times N}$ |
@@ -71,7 +71,7 @@ $i$ represents usually the imaginary unit. $d$ represents derivative. $\partial$
 | :--- | :---: | :---: | :---: |
 | 1 | Chain Rule | Let $(\mathcal{S}_0,\mathcal{S}_1)\subseteq\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}$ and $\boldsymbol{F}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{M\times P}$ be differentiable. Define the differentiable composite function $\boldsymbol{H}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{R\times S}$ by <br/> $\boldsymbol{H}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{G}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast),\boldsymbol{F}^\ast(\boldsymbol{Z},\boldsymbol{Z}^\ast))$ <br/> with derivatives <br/> $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{H}=(\mathcal{D}_{\boldsymbol{F}}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})+(\mathcal{D}_{\boldsymbol{F}^\ast}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}^\ast)$, <br/> $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{H}=(\mathcal{D}_{\boldsymbol{F}}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})+(\mathcal{D}_{\boldsymbol{F}^\ast}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}^\ast)$. | |
 | 2 | Real Scalar Function: 3 Equivalent Ways to Identify Stationary Point  | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. A stationary point of the function $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=g(\boldsymbol{X},\boldsymbol{Y})$, wjere $g:\mathbb{R}^{N\times Q}\times\mathbb{R}^{N\times Q}\rightarrow\mathbb{R}$ and $\boldsymbol{Z}=\boldsymbol{X}+i\boldsymbol{Y}$ is then found by one of the following three equivalent conditions: <br/> 1. $\mathcal{D}_{\boldsymbol{X}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}$ and $\mathcal{D}_{\boldsymbol{Y}}g(\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{0}_{1\times NQ}$, <br/> 2. $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}$, <br/> 3. $\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{0}_{1\times NQ}$. <br/> (A stationary point can be a local minimum, a local maximum, or a saddle point.) | |
-| 3 | Real Scalar Function: Derivative | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$, then $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. <br/> This theorem leads to $df=2\text{Re}\left\{(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\right\}$. | |
+| 3 | Real Scalar Function: Derivative | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$, then $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. <br/> This theorem leads to $df=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace$. | |
 | <a name='T4'>4<a> | Real Scalar Function: Descend Direction. | $f:\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}\rightarrow\mathbb{R}$. The directions where the function $f$ has the maximum and minimum rate of change with respect to $\text{vec}(\boldsymbol{Z})$ are given by $\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$ and $-\left[\mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right]^T$, respectively. <br/> **Note that it is w.r.t. $Z$ conjugate!** Proof in [Proof of T4](#proof-of-t4) | (Hjorungnes, 2011) Theorem 3.4 |
 
 # Finding Complex Differentials
@@ -101,7 +101,7 @@ Take the matrix form $\boldsymbol{Z}$ as example.
 |$d(\boldsymbol{AZB})=\boldsymbol{A}(d\boldsymbol{Z})\boldsymbol{B}$|$\boldsymbol{A}$ and $\boldsymbol{B}$ are constants|
 |$d(a\boldsymbol{Z})=a\ d\boldsymbol{Z}$||
 |$d(\boldsymbol{Z}_0+\boldsymbol{Z}_1)=d\boldsymbol{Z}_0+d\boldsymbol{Z}_1$||
-|$d\left(\text{Tr}\left\{\boldsymbol{Z}\right\}\right)=\text{Tr}\left\{d\boldsymbol{Z}\right\}$||
+|$d\left(\text{Tr}\lbrace\boldsymbol{Z}\rbrace\right)=\text{Tr}\lbrace d\boldsymbol{Z}\rbrace$||
 |$d(\boldsymbol{Z}_0\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\boldsymbol{Z}_1+\boldsymbol{Z}_0(d\boldsymbol{Z}_1)$||
 |$d(\boldsymbol{Z}_0\otimes\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\otimes\boldsymbol{Z}_1+\boldsymbol{Z}_0\otimes(d\boldsymbol{Z}_1)$|Kronecker product|
 |$d(\boldsymbol{Z}_0\odot\boldsymbol{Z}_1)=(d\boldsymbol{Z}_0)\odot\boldsymbol{Z}_1+\boldsymbol{Z}_0\odot(d\boldsymbol{Z}_1)$|Hadamard product|
@@ -179,7 +179,7 @@ From the basic property of trace, we have
 
 $$\begin{aligned}
 df&=\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast)\\
-&=\text{Tr}\left\{\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\right\},
+&=\text{Tr}\lbrace\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\rbrace,
 \end{aligned}$$
 
 which links the formal derivative of size $1\times NQ$
@@ -246,7 +246,7 @@ $$\begin{aligned}
 
 It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}_{\boldsymbol{Z}}f)^\ast$, we have
 
-$$df=2\text{Re}\left\{(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\right\}=2\text{Re}\left\{(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\right\}.$$
+$$df=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.$$
 
 Inside the $\text{Re}(\cdot)$ function is a row vector multiplied by a column vector, which is can be written as a Euclidean inner product of two column vectors, i.e.
 
@@ -254,7 +254,7 @@ $$\boldsymbol{a}_0^H\boldsymbol{a}_1=\langle\boldsymbol{a}_0,\boldsymbol{a}_1\ra
 
 Taking the $\text{Re}(\cdot)$ function on both sides, we can write it as
 
-$$\text{Re}\left\{\boldsymbol{a}_0^H\boldsymbol{a}_1\right\}=\left\langle\begin{bmatrix}
+$$\text{Re}\lbrace\boldsymbol{a}_0^H\boldsymbol{a}_1\rbrace=\left\langle\begin{bmatrix}
   \text{Re}\{\boldsymbol{a}_0\} \\ \text{Im}\{\boldsymbol{a}_0\}
 \end{bmatrix},\begin{bmatrix}
   \text{Re}\{\boldsymbol{a}_1\} \\ \text{Im}\{\boldsymbol{a}_1\}
@@ -263,11 +263,11 @@ $$\text{Re}\left\{\boldsymbol{a}_0^H\boldsymbol{a}_1\right\}=\left\langle\begin{
 Therefore, the differential of $f$ becomes
 
 $$df=2\left\langle\begin{bmatrix}
-  \text{Re}\left\{(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\right\} \\
-  \text{Im}\left\{(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\right\} 
+  \text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace \\
+  \text{Im}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace 
 \end{bmatrix},\begin{bmatrix}
-  \text{Re}\left\{d\text{vec}(\boldsymbol{Z})\right\} \\
-  \text{Im}\left\{d\text{vec}(\boldsymbol{Z})\right\} 
+  \text{Re}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace \\
+  \text{Im}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace 
 \end{bmatrix}\right\rangle.$$
 
 According to the Cauchy-Schwartz inequality, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}_0=k\boldsymbol{a}_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
