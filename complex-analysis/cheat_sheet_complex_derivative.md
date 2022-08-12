@@ -10,7 +10,7 @@ The variable is denoted by the letter $z$ (for scalar, or $\boldsymbol{z}$ for v
 
 $\mathbb{R}$ and $\mathbb{C}$ denote respectively the real number and complex number set. $\boldsymbol{A}\in\mathbb{C}^{N\times Q}$ means that the matrix $A$ contains complex numbers and has size $N\times Q$.
 
-$i$ represents usually the imaginary unit. $d$ represents derivative. $\partial$ is the partial derivative. $(\cdot)^*$ is the conjugate of a complex number, vector or matrix. $(\cdot)^T$ and $(\cdots)^H$ return transpose and Hermitian (conjugate transpose) respectively. $(\boldsymbol{A})^{-1}$ is the inverse matrix of a square matrix $\boldsymbol{A}$, i.e. $\boldsymbol{AA}^{-1}=\boldsymbol{A}^{-1}\boldsymbol{A}=\boldsymbol{I}$. $\text{Tr}\{\boldsymbol{A}\}$ and $\det(\boldsymbol{A})$ return the trace and the determinant of a square matrix $\boldsymbol{A}$. The adjoint of a matrix $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ is denoted by $\boldsymbol{A}^{\#}$, i.e. $\boldsymbol{A}^{\#}=\det(\boldsymbol{A})\boldsymbol{A}^{-1}$.
+$i$ represents usually the imaginary unit. $d$ represents derivative. $\partial$ is the partial derivative. $(\cdot)^*$ is the conjugate of a complex number, vector or matrix. $(\cdot)^T$ and $(\cdots)^H$ return transpose and Hermitian (conjugate transpose) respectively. $(\boldsymbol{A})^{-1}$ is the inverse matrix of a square matrix $\boldsymbol{A}$, i.e. $\boldsymbol{AA}^{-1}=\boldsymbol{A}^{-1}\boldsymbol{A}=\boldsymbol{I}$. $\text{Tr}\{\boldsymbol{A}\}$ and $\det(\boldsymbol{A})$ return the trace and the determinant of a square matrix $\boldsymbol{A}$. The adjoint of a matrix $\boldsymbol{A}\in\mathbb{C}^{N\times N}$ is denoted by $\boldsymbol{A}^{\#}$, i.e. $\boldsymbol{A}^{ \# }=\det(\boldsymbol{A})\boldsymbol{A}^{-1}$.
 
 ## Definitions and Properties of Basic Operators
 
@@ -109,7 +109,7 @@ Take the matrix form $\boldsymbol{Z}$ as example.
 |$d\ \text{reshape}(\boldsymbol{Z})=\text{reshape}(d\boldsymbol{Z})$|reshape|
 |$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
-|$d\det(\boldsymbol{Z})=\text{Tr}\left \{\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\right \}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
+|$d\det(\boldsymbol{Z})=\text{Tr}\lbrace\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\rbrace$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
 
 ## Identification Table and Examples for the Derivative
 
