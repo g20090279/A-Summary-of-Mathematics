@@ -177,7 +177,7 @@ $\frac{\partial}{\partial\boldsymbol{Z}}f$ and $\frac{\partial}{\partial\boldsym
 
 From the basic property of trace, we have
 
-$$\begin{align} df & =\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast) \\ &=\text{Tr}\lbrace\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\rbrace, \end{aligned}$$
+$$\begin{align} df & =\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\text{vec}(\boldsymbol{Z}^\ast) \\ &=\text{Tr}\lbrace\boldsymbol{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\rbrace, \end{align}$$
 
 which links the formal derivative of size $1\times NQ$
 
