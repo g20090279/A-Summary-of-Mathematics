@@ -181,7 +181,7 @@ $$\begin{align} df & =\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+
 
 which links the formal derivative of size $1\times NQ$
 
-$$ \begin{align} \mathcal{D}_{\boldsymbol{Z}}f & =\text{vec}^T(\boldsymbol{A}_0) \\ \mathcal{D}_{\boldsymbol{Z}^\ast}f & =\text{vec}^T(\boldsymbol{A}_1) \end{align}$$
+$$ \begin{align} \mathcal{D}_{\boldsymbol{Z}}f & =\text{vec}^T(\boldsymbol{A}_{0}) \\\\ \mathcal{D}_{\boldsymbol{Z}^{\ast}}f & =\text{vec}^T(\boldsymbol{A}_{1}) \end{align}$$
 
 to the gradients of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$ of size $N\times Q$
 
