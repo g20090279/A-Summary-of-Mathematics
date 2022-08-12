@@ -136,7 +136,7 @@ Check the definition of derivative with respect to a matrix. The following table
 
 ## Complex-Valued Derivatives of $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
 
-***Table**: Complex-valued derivatives of functions of the type $f(\boldsymbol{z},\boldsymbol{z}^\ast)$*
+***Table**: Complex-valued derivatives of functions of the type* $f(\boldsymbol{z},\boldsymbol{z}^\ast)$
 
 |$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|Differential $df$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)$|
 |:---:|:---:|:---:|:---:|
@@ -156,7 +156,7 @@ where $\boldsymbol{A}_0,\boldsymbol{A}_1,\boldsymbol{Z}\in\mathbb{C}^{N\times Q}
 
 ### Definition 2: an alternative to Definition 1
 
-For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}_{\boldsymbol{Z}^*}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
+For this type, it is common to arrange the formal derivatives in an alternative way than in the expressions $\mathcal{D}\_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ and $\mathcal{D}\_{\boldsymbol{Z}^*}f(\boldsymbol{Z},\boldsymbol{Z}^*)$ where $\boldsymbol{Z}\in\mathbb{C}^{N\times Q}$:
 
 $$\begin{aligned}
     \frac{\partial}{\partial\boldsymbol{Z}}f=&\begin{bmatrix}
@@ -203,7 +203,7 @@ $$\begin{aligned}
    \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
 \end{aligned}$$
 
-***Table:** Complex-valued derivatives of functions of the type $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$*. 
+***Table:** Complex-valued derivatives of functions of the type* $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$. 
 
 Note:
 
@@ -231,13 +231,13 @@ Note:
 | $\lambda(\boldsymbol{Z})$ | $\frac{\boldsymbol{v_0}^{\ast}\boldsymbol{u}_0^T}{\boldsymbol{v}_0^H\boldsymbol{u}_0}$ | $\boldsymbol{N\times N}$ |
 | $\lambda^\ast(\boldsymbol{Z})$ | $\boldsymbol{N\times N}$ | $\frac{\boldsymbol{v_0}\boldsymbol{u}_0^H}{\boldsymbol{v}_0^T\boldsymbol{u}_0^{\ast}}$ |
 
-# Appendex: Proof
+# Appendix: Proof
 
 ## Proof of T4
 
 [back](#T4)
 
-First of all, we prove $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
+First of all, we prove $\mathcal{D}\_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}\_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
 
 $$\begin{aligned}
    df&=(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
