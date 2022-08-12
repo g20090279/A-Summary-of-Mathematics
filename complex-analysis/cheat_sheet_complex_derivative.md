@@ -181,7 +181,7 @@ $$\begin{align} df & =\text{vec}^T(\boldsymbol{A}_0)d\text{vec}(\boldsymbol{Z})+
 
 which links the formal derivative of size $1\times NQ$
 
-$$\begin{align}\mathcal{D}_{\boldsymbol{Z}}f & =\text{vec}^T(\boldsymbol{A}_{0}) \\\\ \mathcal{D}_{\boldsymbol{Z}^{\ast}}f & =\text{vec}^T(\boldsymbol{A}_{1})\end{align}$$
+$$\begin{align}\mathcal{D}\_{\boldsymbol{Z}}f & =\text{vec}^T(\boldsymbol{A}\_{0}) \\\\ \mathcal{D}\_{\boldsymbol{Z}^{\ast}}f & =\text{vec}^T(\boldsymbol{A}\_{1})\end{align}$$
 
 to the gradients of $f$ with respect to $\boldsymbol{Z}$ and $\boldsymbol{Z}^\ast$ of size $N\times Q$
 
@@ -194,7 +194,7 @@ by the connection
 
 $$\begin{align}
    \mathcal{D}\_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
-   \mathcal{D}\_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+   \mathcal{D}\_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
 \end{align}$$
 
 ***Table:** Complex-valued derivatives of functions of the type* $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$. 
@@ -270,4 +270,4 @@ $$df=2\left\langle\begin{bmatrix}
   \text{Im}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace 
 \end{bmatrix}\right\rangle.$$
 
-According to the Cauchy-Schwartz inequality, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}_0=k\boldsymbol{a}_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
+According to the *Cauchy-Schwartz inequality*, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}\_0=k\boldsymbol{a}\_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
