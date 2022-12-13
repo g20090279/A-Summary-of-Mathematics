@@ -77,36 +77,23 @@ By the way, for a full QR decomposition $A=QR$, we can apply Householder method 
 
 In 1958, Householder proposed a way to choose $Q_k$ to remove the nonzero entries below the diagonal column by column while preserving previous zeros. The $Q_k$ should have a structure as
 
-$$Q_k=\begin{bmatrix}
-   I & 0\\0&F
-\end{bmatrix},$$
+$$Q_k=\begin{bmatrix}I&0 \\ 0&F\end{bmatrix},$$
 
 where $I\in\mathbb{R}^{(k-1)\times(k-1)}$ and $F\in\mathbb{R}^{(m-k+1)\times(m-k+1)}$ is the *Householder reflector*. The identity block matrix $I$ ensures the first $k-1$ rows are unchanged. Also, the identity block helps preserve the orthogonality of $Q_k$. Since $F$ is an orthogonal matrix, $Q_k$ is thus an orthogonal matrix as well. 
 
 Take a $3\times5$ matrix $C$ as an example,
 
-$$C=\begin{bmatrix}
-    *&*&*&*&*\\*&*&*&*&*\\*&*&*&*&*
-\end{bmatrix}=[\boldsymbol{c}_1,\boldsymbol{c}_2,\boldsymbol{c}_3,\boldsymbol{c}_4,\boldsymbol{c}_5].$$
+$$C=\begin{bmatrix}*&*&*&*&* \\ *&*&*&*&* \\ *&*&*&*&*\end{bmatrix}=[\boldsymbol{c}_1,\boldsymbol{c}_2,\boldsymbol{c}_3,\boldsymbol{c}_4,\boldsymbol{c}_5].$$
 
 After upper triangularization,
 
-$$D=QC=\begin{bmatrix}
-   *&*&*&*&*\\0&*&*&*&*\\0&0&*&*&* 
-\end{bmatrix}=[\boldsymbol{d}_1,\boldsymbol{d}_2,\boldsymbol{d}_3,\boldsymbol{d}_4,\boldsymbol{d}_5].$$
+$$D=QC=\begin{bmatrix}*&*&*&*&* \\ 0&*&*&*&* \\ 0&0&*&*&* \end{bmatrix}=[\boldsymbol{d}_1,\boldsymbol{d}_2,\boldsymbol{d}_3,\boldsymbol{d}_4,\boldsymbol{d}_5].$$
 
 For the first step to transform $\boldsymbol{c}_1$ to $\boldsymbol{d}_1$, we have $\boldsymbol{d}_1=Q_1\boldsymbol{c}_1$. We need to determine first $\boldsymbol{d}_1=[d_{11},0,0]^T$. As we know, the Householder transformation preserves the norm. indicating that $d_{11}=\|\boldsymbol{c}_1\|$. The axis $\boldsymbol{a}^{(1)}=\boldsymbol{c}_1-\boldsymbol{d}_1$. Then $Q_1$ can be calculated as Equation (1).
 
 Now we have $D^{(1)}=Q_1C$, the first column of which has zero entries except for the first one
 
-$$D^{(1)}=\begin{bmatrix}
-    \begin{array}{c|cccc}
-        *&*&*&*&*\\
-        \hline
-        0&*&*&*&*\\
-        0&*&*&*&*
-    \end{array}
-\end{bmatrix}.$$
+$$D^{(1)}=\begin{bmatrix}\begin{array}{c|cccc}*&*&*&*&* \\ \hline 0&*&*&*&* \\ 0&*&*&*&* \end{array}\end{bmatrix}.$$
 
 The second step is on the remaining $2\times4$ block matrix by omitting the top row and left column, denoted as $S^{(1)}=\left[\boldsymbol{s}_1^{(1)},\boldsymbol{s}_2^{(1)},\boldsymbol{s}_3^{(1)},\boldsymbol{s}_4^{(1)}\right]^T$. The second Householder reflector is
 
