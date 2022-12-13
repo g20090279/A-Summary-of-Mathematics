@@ -2,7 +2,7 @@
 
 # Introduction and Definition
 
-Ofent it is useful to use one single number to characterize a multivariate phenomenon. Determinant is one example of this.
+Ofen it is useful to use one single number to characterize a multivariate phenomenon. Determinant is one example of this.
 
 Consider a square matrix $A$ with size $n\times n$. $A$ can be a real matrix $A\in\mathbb{R}^{n\times n}$ or a complex matrix $A\in\mathbb{C}^{n\times n}$.
 
@@ -85,29 +85,54 @@ $$\begin{aligned}\det\left(\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_
 
 The determinant of a matrix is the product of its eigenvalues.
 
-> Assume $\lambda_1,\lambda_2,\cdots,\lambda_n$ are the eigenvalues of the $n$-by-$n$ matrix A. $$\det(A)=\prod_{i=1}^{n}\lambda_i.$$
+> Assume $\lambda_1,\lambda_2,\cdots,\lambda_n$ are the eigenvalues of the $n$-by-$n$ matrix A.
+> $$\det(A)=\prod_{i=1}^{n}\lambda_i.$$
 
-# More Properties of Determinant
+# Properties of Determinant
 
-- Determinant of an identity matrix is 1.
+The determinant of a square matrix obey a large number of important identities.
+
+## Determinant of an identity matrix is 1.
 
 $$\det(I)=1.$$
 
-- Determinant of an upper triangular or a lower triangular matrix is the product of the main diagonal.
+## Determinant of an upper triangular or a lower triangular matrix is the product of the main diagonal.
 
 $$\det\left(\begin{bmatrix}a_{11}&a_{12}&a_{13}\\0&a_{22}&a_{23}\\0&0&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
 
 $$\det\left(\begin{bmatrix}a_{11}&0&0\\a_{21}&a_{22}&0\\a_{31}&a_{32}&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
 
-- Determinants of its transpose and itself are the same.
+## Determinants of its transpose and itself are the same.
 
 $$\det(A)=\det(A^T).$$
 
-- Multiplicative.
+## Multiplicative function
 
-$$\det(AB)=\det(A)\det(B).$$
+$$\det(AB)=\det(A)\det(B),$$
+
+where $A,B$ are square matrices of the same dimension.
 
 We can notice that although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$. This may be proved using elementary operations that row-reduce both $A$ and $B$.
+
+## Weinstein-Aronszajn Determinant Identity
+
+$$\det(1+AB)=\det(1+BA),$$
+
+where $A$ is an $n\times m$ matrix and $B$ is an $m\times n$ matrix.
+
+This can be proved by applying multiplicativity with $A=\begin{bmatrix}I_n&-A\\B&I_m\end{bmatrix}$ and $B=\begin{bmatrix}I_n&A\\0&I_m\end{bmatrix}$.
+
+> This identity, which coverts an $n\times n$ determinant into an $m\times m$ determinant, is very useful in random matrix theory, particularly in regimes in which $m$ is much smaller than $n$. [(Terry Tao)](https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/)
+
+## Determinant by applying Schur complement
+
+If $A$ is invertible,
+
+$$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(A)\det(D-CA^{-1}B).$$
+
+If $D$ is invertible,
+
+$$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(D)\det(A-BD^{-1}C).$$
 
 # References
 
