@@ -84,9 +84,10 @@ where $I\in\mathbb{R}^{(k-1)\times(k-1)}$ and $F\in\mathbb{R}^{(m-k+1)\times(m-k
 
 Take a $3\times5$ matrix $C$ as an example,
 
-$$C=\begin{bmatrix}*&*&*&*&*\\
-*&*&*&*&*\\
-*&*&*&*&*
+$$C=\begin{bmatrix}
+\ast & \ast & \ast & \ast & \ast\\
+\ast & \ast & \ast & \ast & \ast\\
+\ast & \ast & \ast & \ast & \ast
 \end{bmatrix}=[\boldsymbol{c}_1,\boldsymbol{c}_2,\boldsymbol{c}_3,\boldsymbol{c}_4,\boldsymbol{c}_5].$$
 
 After upper triangularization,
