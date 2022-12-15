@@ -92,9 +92,10 @@ $$C=\begin{bmatrix}
 
 After upper triangularization,
 
-$$D=QC=\begin{bmatrix}*&*&*&*&*\\
-0&*&*&*&*\\
-0&0&*&*&*
+$$D=QC=\begin{bmatrix}
+\ast & \ast & \ast & \ast & \ast \\
+0 & \ast & \ast & \ast & \ast\\
+0 & 0 & \ast & \ast & \ast
 \end{bmatrix}=[\boldsymbol{d}_1,\boldsymbol{d}_2,\boldsymbol{d}_3,\boldsymbol{d}_4,\boldsymbol{d}_5].$$
 
 For the first step to transform $\boldsymbol{c}_1$ to $\boldsymbol{d}_1$, we have $\boldsymbol{d}_1=Q_1\boldsymbol{c}_1$. We need to determine first $\boldsymbol{d}_1=[d_{11},0,0]^T$. As we know, the Householder transformation preserves the norm. indicating that $d_{11}=\|\boldsymbol{c}_1\|$. The axis $\boldsymbol{a}^{(1)}=\boldsymbol{c}_1-\boldsymbol{d}_1$. Then $Q_1$ can be calculated as Equation (1).
@@ -103,10 +104,10 @@ Now we have $D^{(1)}=Q_1C$, the first column of which has zero entries except fo
 
 $$D^{(1)}=\begin{bmatrix}
 \begin{array}{c|cccc}
-*&*&*&*&* \\
+\ast & \ast & \ast & \ast& \ast \\
 \hline
-0&*&*&*&*\\
-0&*&*&*&*
+0 & \ast & \ast & \ast & \ast\\
+0 & \ast & \ast & \ast & \ast
 \end{array}\end{bmatrix}.$$
 
 The second step is on the remaining $2\times4$ block matrix by omitting the top row and left column, denoted as $S^{(1)}=\left[\boldsymbol{s}_1^{(1)},\boldsymbol{s}_2^{(1)},\boldsymbol{s}_3^{(1)},\boldsymbol{s}_4^{(1)}\right]^T$. The second Householder reflector is
