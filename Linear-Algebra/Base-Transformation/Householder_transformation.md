@@ -29,7 +29,7 @@ How can we do this? It is simple. Consider $\boldsymbol{a}$ as a axis. We denote
 
 ![reflection-of-u](./../Images/Householder_transformation_2.png)
 
-*Fig 2: Reflect $\boldsymbol{u}$ by using the projection of $\boldsymbol{u}$ on $\boldsymbol{a}$.*
+*Fig 2: Reflect* $\boldsymbol{u}$ *by using the projection of* $\boldsymbol{u}$ *on* $\boldsymbol{a}$.
 
 Then, we can formulate the equation
 
@@ -49,7 +49,7 @@ If we have a vector $\boldsymbol{u}$ and its reflection $\boldsymbol{v}$, how ca
 
 ![find-a-given-u-and-v](./../Images/Householder_transformation_3.png)
 
-*Fig 3: Find $\boldsymbol{a}$ given $\boldsymbol{u}$ and $\boldsymbol{v}$.*
+*Fig 3: Find* $\boldsymbol{a}$ *given* $\boldsymbol{u}$ *and* $\boldsymbol{v}$.
 
 We can check this by
 
