@@ -98,7 +98,7 @@ $$D=QC=\begin{bmatrix}
 0 & 0 & \ast & \ast & \ast
 \end{bmatrix}=[\boldsymbol{d}_1,\boldsymbol{d}_2,\boldsymbol{d}_3,\boldsymbol{d}_4,\boldsymbol{d}_5].$$
 
-For the first step to transform <span>$\boldsymbol{c}\_1$</span> to <span>$\boldsymbol{d}\_{1}$</span>, we have <span>$\boldsymbol{d}\_{1}=Q\_1\boldsymbol{c}\_{1}$</span>. We need to determine first <div>$\boldsymbol{d}_1=[d_{11},0,0]^T$</div>. As we know, the Householder transformation preserves the norm. indicating that $d_{11}=\|\boldsymbol{c}_1\|$. The axis $\boldsymbol{a}^{(1)}=\boldsymbol{c}_1-\boldsymbol{d}_1$. Then $Q_1$ can be calculated as Equation (1).
+For the first step to transform <span>$\boldsymbol{c}\_1$</span> to <span>$\boldsymbol{d}\_{1}$</span>, we have <span>$\boldsymbol{d}\_{1}=Q\_1\boldsymbol{c}\_{1}$</span>. We need to determine first <span>$\boldsymbol{d}\_1=[d\_{11},0,0]^T$</span>. As we know, the Householder transformation preserves the norm. indicating that $d_{11}=\|\boldsymbol{c}_1\|$. The axis $\boldsymbol{a}^{(1)}=\boldsymbol{c}_1-\boldsymbol{d}_1$. Then $Q_1$ can be calculated as Equation (1).
 
 Now we have $D^{(1)}=Q_1C$, the first column of which has zero entries except for the first one
 
@@ -131,7 +131,7 @@ and then $\boldsymbol{a}=\left[-\textbf{sign}(c_{11})\|\boldsymbol{c}_1\|,0,0\ri
 
 Since the sign of $\boldsymbol{a}$ doesn't affect $Q_1$, we can scale $\boldsymbol{a}$ by $-1$
 
-$$\boldsymbol{a}=\left[\textbf{sign}(c_{11})\|\boldsymbol{c}_1\|,0,0\right]^T+\boldsymbol{c}_1.$$
+$$\boldsymbol{a}=\left[\textbf{sign}(c_{11})\left\|\boldsymbol{c}_1\right\|,0,0\right]^T+\boldsymbol{c}_1.$$
 
 # Comparison with Gram-Schmidt Orthogonalization Procedure
 
