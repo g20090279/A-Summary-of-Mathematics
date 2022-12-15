@@ -77,7 +77,8 @@ By the way, for a full QR decomposition $A=QR$, we can apply Householder method 
 
 In 1958, Householder proposed a way to choose $Q_k$ to remove the nonzero entries below the diagonal column by column while preserving previous zeros. The $Q_k$ should have a structure as
 
-$$Q_k=\begin{bmatrix}I&0\\0&F\end{bmatrix},$$
+$$Q_k=\begin{bmatrix}I&0\\
+0&F\end{bmatrix},$$
 
 where $I\in\mathbb{R}^{(k-1)\times(k-1)}$ and $F\in\mathbb{R}^{(m-k+1)\times(m-k+1)}$ is the *Householder reflector*. The identity block matrix $I$ ensures the first $k-1$ rows are unchanged. Also, the identity block helps preserve the orthogonality of $Q_k$. Since $F$ is an orthogonal matrix, $Q_k$ is thus an orthogonal matrix as well. 
 
