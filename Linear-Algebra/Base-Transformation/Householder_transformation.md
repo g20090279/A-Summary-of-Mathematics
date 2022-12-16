@@ -127,7 +127,9 @@ In practice, it's important to choose the "better of the two reflectors". Take t
 
 $$d_{11}=-\textbf{sign}(c_{11})\|\boldsymbol{c}_1\|,$$
 
-and then $\boldsymbol{a}=\left[-\textbf{sign}(c_{11})\|\boldsymbol{c}_1\|,0,0\right]^T-\boldsymbol{c}_1$.
+and then 
+
+$$\boldsymbol{a}=\left[-\textbf{sign}(c_{11})\|\boldsymbol{c}_1\|,0,0\right]^T-\boldsymbol{c}_1.$$
 
 Since the sign of $\boldsymbol{a}$ doesn't affect $Q_1$, we can scale $\boldsymbol{a}$ by $-1$
 

@@ -1,5 +1,5 @@
 - Topic: The QR Decomposition of a Matrix
-- Last revised: 12.12.2022
+- Last revised: 16.12.2022
 - (Copied from UCBerkeley)
 
 ---
@@ -155,3 +155,13 @@ The full QR decomposition reveals the rank of $A$: we simply look at the element
 # Other approaches
 
 The above introduction of QR decomposition is based on Gram-Schmidt orthogonalization process. However, the more common approach to QR decomposition is employing Household reflections rather than utilizing Gram-Schmidt process.
+
+# Note 1: QR decomposition of a unitary matrix
+
+**Proposition 1**: Consider $A$ is a $n\times n$ unitary square matrix, i.e. $A^HA=AA^H=I$. Decompose $A$ into a unitary matrix $Q$ and a upper triangular matrix $R$
+
+$$A=QR,$$
+
+where $R=\textbf{diag}\left(e^{j\theta_1},\cdots,e^{j\theta_n}\right)$.
+
+**Proof**. Since $Q$ is an unitary matrix, we have $R=Q^HA$. Then, $R^HR=A^HQQ^HA=A^HA=I$. Since $R$ now is a unitary matrix as well as an upper triangular matrix, it is thus a diagonal matrix (not necessary an identity matrix). Since $R^HR=I$, the power of each diagonal entry is 1. We can then model $R=\textbf{diag}\left(\left[e^{j\theta_1},\cdots,e^{j\theta_n}\right]\right)$.

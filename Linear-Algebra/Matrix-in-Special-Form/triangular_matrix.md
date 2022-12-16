@@ -35,3 +35,6 @@ This special form in a linear system of a form $$Ax=b$$ can make the problem ver
 - A matrix which is both symmetric and triangular is diagonal.
 - A matrix which is both unitary and triangular is an identity matrix.
 - The eigenvalues of a triangular matrix are exactly its diagonal entries.
+- The sum of two upper (lower) triangular matrices is upper (lower) triangular.
+- The product of two upper (lower) triangular matrices is upper (lower) triangular.
+- The inverse of an upper (lower) triangular matrix, if it exists, is upper (lower) triangular.
