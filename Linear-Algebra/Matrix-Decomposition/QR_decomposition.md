@@ -4,25 +4,27 @@
 
 ---
 
-> - Basic idea
-> - Case when the matrix has linearly independent columns 
+> - Basic Idea
+> - Case 1: $A$ has full column rank 
 >   - Prof of the uniqueness of QR decomposition
 >   - Matlab syntax
 >   - Example: QR decomposition of a 4x6 matrix
 > - General case
 > - Full QR decomposition
 
-# Basic idea
+# Basic Idea
 
-The basic goal of the QR decomposition is to factor a matrix as a product of two matrices (traditionally called $Q$, $R$, hence the name of this factorization). Each matrix has a simple structure which can be further exploited in dealing with, say, linear equations.
+The basic goal of the QR decomposition is to factor a matrix as a product of two matrices (traditionally called $Q$, $R$, hence the name of this factorization). Each matrix has a simple structure which can be further exploited in dealing with, say, linear equations. To solve a linear system
 
-The QR decomposition is nothing else than the *Gram-Schmidt orthogonalization process* applied to the columns of the matrix, and with the result expressed in matrix form. It is relatively easy to code up QR decomposition based on Gram-Schmidt process. However, the QR algorithm using Gram-Schmidt process can become unstable and hence there are a couple of other more stable algorithms exploited and being used in cases in practice, such as *Givens Rotation*, *Householder reflection* and so on.
+$$Ax=b,$$
 
-Note that a QR decomposition of a matrix is unique and always exists.
+we need to obtain the inverse of $A$, i.e., $x=A^{-1}b$, which is computationally demanding. If we can decompose $A=QR$, which makes the equation be $QRx=b$, we can further transform it to $Rx=Q^Tb$, where $Q$ is an orthogonal matrix, so that we can avoid matrix inversion. The upper triangular matrix $R$ enable *back-substitution operation* to finally calculate $x$.
+
+The QR decomposition is nothing else than the *Gram-Schmidt orthogonalization process* applied to the columns of the matrix, and with the result expressed in matrix form. In this sense, *QR decomposition of any matrix always exists*. It is relatively easy to code up QR decomposition based on Gram-Schmidt process. However, the QR algorithm using Gram-Schmidt process can become unstable and hence there are a couple of other more stable algorithms exploited and being used in cases in practice, such as *Givens Rotation*, *Householder reflection* and so on.
 
 Consider a $m \times n$ matrix $A = [\boldsymbol{a}_1,\cdots,\boldsymbol{a}_n]$, with each $\boldsymbol{a}_i\in\mathbb{R}^m$ a column of $A$. Note that the QR decomposition is introduced to a real matrix in the following context. It can also be applied to a complex-number matrix. The only difference in the expression is that the $Q$ is a unitary matrix, i.e., $Q^HQ=I$, where $Q^H$ is the conjugate transpose of $Q$.
 
-# Case when $A$ is full column rank
+# Case 1: Full column rank $m\ge n$
 
 Assume first that the $\boldsymbol{a}_i$'s (the columns of $A$) are linearly independent. Each step of the G-S process can be written as
 
@@ -40,15 +42,20 @@ Since the $\boldsymbol{q}_i$'s are unit-length and normalized, the matrix $Q = (
 
 $$A = QR, \quad Q = \begin{bmatrix} \boldsymbol{q}_1 & \cdots & \boldsymbol{q}_n \end{bmatrix} , \quad R = \begin{bmatrix} r_{11} & r_{12} & \cdots & r_{1n} \\ 0 & r_{22} & & r_{2n} \\ \vdots & & \ddots & \vdots \\ 0 & & 0 & r_{nn} \end{bmatrix}$$
 
-where $Q$ is a $m \times n$ matrix with $Q^TQ = I_n$, and $R$ is $n \times n$, upper-triangular.
+where $Q$ is a $m \times n$ matrix with $Q^TQ = I_n$, and $R$ is $n \times n$, upper-triangular. Since $Q$ is not square but a tall matrix, this form of decomposition is called *Reduced QR Decomposition*. The columns of $Q$ form an orthonormal basis for he column space of $A$.
 
-## Proof of the uniqueness of QR decomposition
+There is another form of decomposition, *Full QR Decomposition*, where $Q$ is square and $R$ is tall
 
-Assume $A=Q_1R_1=Q_2R_2$. Left-multiplying $Q_2^T$ and right-multiplying $R_1^{-1}$ yields
+$$[\boldsymbol{q}_1,\cdots,\boldsymbol{q}_n,\boldsymbol{q}_{n+1},\cdots,\boldsymbol{q}_m]_{m\times m}\begin{bmatrix}
+   r_11 & \cdots & r_{1n}\\
+   0 & \ddots & \vdots\\
+   0 & 0 & r_{nn}\\
+   0 & \cdots & 0\\
+   \vdots & \ddots & \vdots\\
+   0 & \cdots & 0 
+\end{bmatrix}_{m\times n}=A.$$
 
-$$Q_2^TQ_1R_1R_1^{-1}=Q_2^TQ_2R_2R_1^{-1}.$$
-
-The left-hand side becomes $Q_2^TQ_1$. The multiplication of two unitary matrices is still unitary. The right-hand side is $R_2R_1^{-1}$. First, a inverse upper triangle matrix, $R_1^{-1}$, is still upper triangle. Then, the product of two upper triangle matrices is also upper triangle matrix. Therefore, the result of $Q_2^TQ_1$ of $R_2R_1^{-1}$ is a upper triangle unitary matrix, which can only be an identity matrix. Hence, $Q_2^TQ_1=I$, indicating $Q_1=Q_2$. $\square$
+The $m$ columns of $Q$ form an orthonormal basis for all $\mathbb{F}^{m}$.
 
 ## Matlab syntax
 
@@ -56,7 +63,7 @@ The left-hand side becomes $Q_2^TQ_1$. The multiplication of two unitary matrice
 >> [Q,R] = qr(A,0); % A is a mxn matrix, Q is mxn orthogonal, R is nxn upper triangular
 ```
 
-## Example: QR decomposition of a 4x6 matrix
+## Example: QR decomposition of a $6\times4$ matrix
 
 $$A = \begin{bmatrix} 0.488894&0.888396&0.325191&0.319207 \\ 1.03469&-1.14707&-0.754928&0.312859 \\ 0.726885&-1.06887&1.3703&-0.86488 \\ -0.303441&-0.809499&-1.71152&-0.0300513 \\ 0.293871&-2.94428&-0.102242&-0.164879 \\ -0.787283&1.43838&-0.241447&0.627707 \end{bmatrix}.$$
 
@@ -100,63 +107,65 @@ $$R=\begin{bmatrix}2.61388&0.909015&-1.40302&3.82473 \\ 0&1.33807&0.0979073&0.09
 
 We observe that the last triangular element is virtually zero, and the last column is seen to be a linear combination of the first and the third. This shows that the rank of $R$ (itself equal to the rank of $A$) is effectively $3$.
 
-# Case when the columns are not independent
+# Case 2: Rank-deficient matrix
 
-When the columns of $A$ are not independent, at some step of the G-S procedure we encounter a zero vector $\tilde{q}_j$, which means $a_{j}$ is a linear combination of $a_{j-1},\cdots,a_1$. The modified Gram-Schmidt procedure then simply skips to the next vector and continues.
-
-In matrix form, we obtain $A = QR$, with $Q \in \mathbb{R}^{m \times r}$, $r = \text{\bf{Rank}}(A)$, and $R$ has an upper staircase form, for example:
-
-$$R = \begin{bmatrix} \ast & \ast & \ast & \ast & \ast & \ast \\ 0 & 0 & \ast & \ast & \ast & \ast \\ 0 & 0 & 0 & 0 & \ast & \ast \end{bmatrix}.$$
-
-(This is simply an upper triangular matrix with some rows deleted. It is still upper triangular.)
-
-We can permute the columns of R to bring forward the first non-zero elements in each row:
-
-$$R = \begin{bmatrix} R_1 & R_2 \end{bmatrix}P^T, \quad \begin{bmatrix} R_1 | R_2\end{bmatrix}:= \left[ \begin{matrix} \ast & \ast & \ast \\ 0 & \ast & 0 \\ 0 & 0 & \ast \end{matrix} \left| \begin{matrix}\ast & \ast & \ast \\ \ast & \ast & \ast \\  0 & 0 & \ast \end{matrix}\right.\right],$$
-
-where $P$ is a permutation matrix (that is, its columns are the unit vectors in some order), whose effect is to permute columns. (Since $P$ is orthogonal, $P^{-1} = P^T$.) Now, $R_1$ is square, upper triangular, and invertible, since none of its diagonal elements is zero.
-
-The QR decomposition can be written
-
-$$AP = Q \begin{bmatrix} R_1 & R_2\end{bmatrix},$$
-
-where
-
-1. $Q \in \mathbb{R}^{m \times r}, Q^TQ=I_r$;
-2. $r$ is the rank of $A$;
-3. $R_1$ is $r \times r$ upper triangular, invertible matrix;
-4. $R_2$ is a $r \times (n -r)$ matrix;
-5. $P$ is a $m \times m$ permutation matrix.
+Consider $r = \text{\bf{Rank}}(A)$ with $r\le\min(m,n)$. We can obtain $A = QR$, with $Q \in \mathbb{R}^{m \times r}$ and $R\in\mathbb{R}^{r\times n}$. This is the reduced form of QR decomposition. Similarly, the rank-deficient matrix $A$ can also be docomposed into $A=QR$ with $Q\in\mathbb{R}^{m\times m}$ and $R\in\mathbb{R}^{m\times n}$. The last $m-r$ rows of $R$ are zeros. 
 
 ## Matlab syntax
 
 ```matlab
->> [Q,R,inds] = qr(A,0);  % here inds is a permutation vector such that A(:,inds) = Q*R
-```
+>> % generate rank-deficient matrix with rank r
+>> m = 7;
+>> n = 5;
+>> r = 3;
 
-# Full QR decomposition
+>> A = rand(m,n);
 
-The full QR decomposition allows to write $A = QR$ where $Q \in \mathbf{R}^{m \times m}$ is square and orthogonal ($Q^TQ = QQ^T = I_m$). In other words, the columns of $Q$ are an orthonormal basis for the whole output space $\mathbf{R}^m$, not just for the range of $A$.
+>> [U,S,V] = eig(A);
 
-We obtain the full decomposition by appending an $m \times m$ identity matrix to the columns of $A: A \rightarrow [A,I_m]$. The QR decomposition of the augmented matrix allows to write
+>> % create rank-deficient matrix
+>> B = U(:,1:r)*S(1:r,:)*V(:,1:r)';
 
-$$AP = QR = \begin{bmatrix} Q_1 & Q_2 \end{bmatrix} \begin{bmatrix} R_1 & R_2 \\ 0 & 0 \end{bmatrix},$$
+>> [Q,R] = qr(B,0);
 
-where the columns of the $m \times m$ matrix $Q = [Q_1,Q_2]$ are orthogonal, and $R_1$ is upper triangular and invertible. (As before, $P$ is a permutation matrix.) In the G-S procedure, the columns of $Q_1$ are obtained from those of $A$, while the columns of $Q_2$ come from the extra columns added to $A$.
-
-The full QR decomposition reveals the rank of $A$: we simply look at the elements on the diagonal of $R$ that are not zero, that is, the size of $R_1$.
-
-## Matlab syntax
-
-```matlab
->> [Q,R] = qr(A); % A is a mxn matrix, Q is mxm orthogonal, R is mxn upper triangular
+>> C = Q(:,1:r)*R(1:r,:); % C = B
 ```
 
 # Other approaches
 
 The above introduction of QR decomposition is based on Gram-Schmidt orthogonalization process. However, the more common approach to QR decomposition is employing Household reflections rather than utilizing Gram-Schmidt process.
 
-# Note 1: QR decomposition of a unitary matrix
+# Notes
+
+## Note 1: How Unique is QR?
+
+Here we consider only the special case of full rank.
+
+### Square matrix, $m=n$
+
+Assume $A=Q_1R_1=Q_2R_2$. Left-multiplying $Q_2^T$ and right-multiplying $R_1^{-1}$ yields
+
+$$Q_2^TQ_1R_1R_1^{-1}=Q_2^TQ_2R_2R_1^{-1}.$$
+
+The left-hand side becomes $Q_2^TQ_1$. The multiplication of two unitary matrices is still unitary. The right-hand side is $R_2R_1^{-1}$. For the right-hand side, an inverse upper triangular matrix, $R_1^{-1}$, is still upper triangular. Moreover, the product of two upper triangular matrices $R_2R_1^{-1}$ is also upper triangular matrix. Therefore, $Q_2^TQ_1$ is both a upper triangular unitary matrix and a unitary matrix, which can only be an identity matrix whose diagonal entries are all positive or negative one. Hence, $Q_2^TQ_1=\pm I$. If we require the diagonal entries of $R$ to be positive, $Q_1=Q_2$, indicating that QR decomposition is unique.
+
+### Underdetermined matrix, $m<n$
+
+If $A=Q_1[R_1,N_1]=Q_2[R_2,N_2]$ are two QR decompositions of a full rank, $m\times n$ matrix $A$ with $m<n$, where $Q_1,Q_2\in\mathbb{C}^{m\times m}$, $R_1,R_2\in\mathbb{C}^{m\times n}$ and $N_1,N_2\in\mathbb{C}^{m\times(n-m)}$, then similarly, there exists a square diagonal matrix $S$ fulfilling that 
+
+$$Q_2=Q_1S,\quad R_2=SR_1,\quad N_2=SN_1.$$
+
+If we constrain the diagonal entries of $R$ to be positive, the decomposition is unique.
+
+### Overdetermined matrix, $m>n$
+
+If $A=[Q_1,U_1]\begin{bmatrix}R_1 \\0\end{bmatrix}=[Q_2,U_2]\begin{bmatrix}R_2\\0\end{bmatrix}$ are two QR decompositions of a full rank, $m\times n$ matrix $A$ with $m>n$, then
+
+$$Q_2=Q_1S,\quad R_2=SR_1,\quad U_2=U_1T,$$
+
+for some square diagonal matrix $S$ with entries $\pm1$ and square orthogonal $T$. If we require the diagonal entries of R to be positive, then $Q$ and $R$ are unique.
+
+## Note 2: QR decomposition of a unitary matrix
 
 **Proposition 1**: Consider $A$ is a $n\times n$ unitary square matrix, i.e. $A^HA=AA^H=I$. Decompose $A$ into a unitary matrix $Q$ and a upper triangular matrix $R$
 
