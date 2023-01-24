@@ -89,6 +89,25 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 | 12 | Complex Gradient Vector | If $f$ is a real-value function* of a complex vector $\boldsymbol{z}$, then the complex gradient vector is given by $\nabla f(\boldsymbol{z})=2\frac{df(\boldsymbol{z})}{d\boldsymbol{z}^\ast}=\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{R}(\boldsymbol{z})}+i\frac{\partial f(\boldsymbol{z})}{\partial\mathfrak{I}(\boldsymbol{z})}$. <br> *A real value function is not holomorphic. |
 | 13 | Complex Gradient Matrix | If $f$ is a real-value function of a complex matrix $Z$, then the complex gradient matrix is given by $\nabla f(\boldsymbol{Z})=2\frac{df(\boldsymbol{Z})}{d\boldsymbol{Z}^\ast}=\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{R}(\boldsymbol{Z})}+i\frac{\partial f(\boldsymbol{Z})}{\partial\mathfrak{I}(\boldsymbol{Z})}$. |
 
+## Identification Table and Examples for the Derivative
+
+Check the definition of derivative with respect to a matrix. The following table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
+
+***Table:** Identification table.*
+
+|Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
+|:---:|:---:|:---:|:---:|:---:|
+|$f(z,z^\ast)$|$df=a_0dz+a_1dz^*$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
+|$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$df=\boldsymbol{a}_0d\boldsymbol{z}+\boldsymbol{a}_1\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_1$|$1\times N$|
+|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{vec}^T(\boldsymbol{A}_0)d\ \text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\ \text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_0)$|$\mathcal{D}_{\boldsymbol{Z}^\ast}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_1)$|$1\times NQ$|
+|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{Tr}\{\mathbf{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\}$|$\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_0$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_1$|$N\times Q$|
+|$\boldsymbol{f}(z,z^\ast)$|$d\boldsymbol{f}=\boldsymbol{b}_0dz+\boldsymbol{b}_1dz^\ast$|$\mathcal{D}_{z}\boldsymbol{f}(z,z^\ast)=\boldsymbol{b}_0$|$\mathcal{D}_{z^\ast}\boldsymbol{f}(z,z^\ast)=\boldsymbol{b}_1$|$M\times1$|
+|$\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)$|$d\boldsymbol{f}=\boldsymbol{B}_0d\boldsymbol{z}+\boldsymbol{B}_1d\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{B}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{B}_1$|$M\times N$|
+|$\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$d\boldsymbol{f}=\boldsymbol{\beta}_0d\text{vec}(\boldsymbol{Z})+\boldsymbol{\beta}_1d\text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\beta}_0$|$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\beta}_1$|$M\times NQ$|
+|$\boldsymbol{F}(z,z^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{c}_0dz+\boldsymbol{c}_1dz^\ast$|$\mathcal{D}_{z}\boldsymbol{F}(z,z^\ast)=\boldsymbol{c}_0$|$\mathcal{D}_{z^\ast}\boldsymbol{F}(z,z^\ast)=\boldsymbol{c}_1$|$MP\times1$|
+|$\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{C}_0d\boldsymbol{z}+\boldsymbol{C}_1d\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_1$|$MP\times N$|
+|$\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{\zeta}_0d\boldsymbol{Z}+\boldsymbol{\zeta}_1d\boldsymbol{Z}^\ast$|$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_0$|$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_1$|$MP\times NQ$|
+
 # Some Theorems
 
 ## Chian Rules
@@ -98,6 +117,8 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 |1 | Chain Rule | Let $(\mathcal{S}_0,\mathcal{S}_1)\subseteq\mathbb{C}^{N\times Q}\times\mathbb{C}^{N\times Q}$ and $\boldsymbol{F}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{M\times P}$ be differentiable. Define the differentiable composite function $\boldsymbol{H}:\mathcal{S}_0\times\mathcal{S}_1\rightarrow\mathbb{C}^{R\times S}$ by <br/> $\boldsymbol{H}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{G}(\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast),\boldsymbol{F}^\ast(\boldsymbol{Z},\boldsymbol{Z}^\ast))$ <br/> with derivatives <br/> $\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{H}=(\mathcal{D}_{\boldsymbol{F}}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F})+(\mathcal{D}_{\boldsymbol{F}^\ast}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}^\ast)$, <br/> $\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{H}=(\mathcal{D}_{\boldsymbol{F}}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F})+(\mathcal{D}_{\boldsymbol{F}^\ast}\boldsymbol{G})(\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}^\ast)$. | |
 
 ## Scalar Real-Value Function
+
+The problems encountered by engineers are mostly related to scalar real-value functions, with which we can compare the magnitude, ordering, and hence find the maximum or minimum.
 
 | Index | Name | Expression | Reference |
 | :--- | :--- | :--- | :--- |
@@ -135,25 +156,6 @@ Take the matrix form $\boldsymbol{Z}$ as example.
 | Equations | Comments |
 |:---:|:---:|
 |$\frac{\partial}{\partial X}\ln\det X$||
-
-# Identification Table and Examples for the Derivative
-
-Check the definition of derivative with respect to a matrix. The following table summarizes from the simplest case to the most-general case. $\boldsymbol{z},\boldsymbol{z}^\ast\in\mathbb{C}^{N\times 1}$ and $\boldsymbol{Z},\boldsymbol{Z}^\ast\in\mathbb{C}^{N\times Q}$, and $\boldsymbol{f}:\rightarrow\mathbb{C}^{M\times1}$, $\boldsymbol{F}:\rightarrow\mathbb{C}^{M\times P}$.
-
-***Table:** Identification table.*
-
-|Function type|Differential|Derivative w.r.t. $z$, $\boldsymbol{z}$ or $\boldsymbol{Z}$|Derivative w.r.t. $z^\ast$, $\boldsymbol{z}^\ast$ or $\boldsymbol{Z}^\ast$|Size of derivatives|
-|:---:|:---:|:---:|:---:|:---:|
-|$f(z,z^\ast)$|$df=a_0dz+a_1dz^*$|$\mathcal{D}_zf(z,z^\ast)=a_0$|$\mathcal{D}_{z^\ast}f(z,z^\ast)=a_1$|$1\times1$|
-|$f(\boldsymbol{z},\boldsymbol{z}^\ast)$|$df=\boldsymbol{a}_0d\boldsymbol{z}+\boldsymbol{a}_1\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}f(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{a}_1$|$1\times N$|
-|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{vec}^T(\boldsymbol{A}_0)d\ \text{vec}(\boldsymbol{Z})+\text{vec}^T(\boldsymbol{A}_1)d\ \text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_0)$|$\mathcal{D}_{\boldsymbol{Z}^\ast}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\text{vec}^T(\boldsymbol{A}_1)$|$1\times NQ$|
-|$f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$df=\text{Tr}\{\mathbf{A}_0^Td\boldsymbol{Z}+\boldsymbol{A}_1^Td\boldsymbol{Z}^\ast\}$|$\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_0$|$\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{A}_1$|$N\times Q$|
-|$\boldsymbol{f}(z,z^\ast)$|$d\boldsymbol{f}=\boldsymbol{b}_0dz+\boldsymbol{b}_1dz^\ast$|$\mathcal{D}_{z}\boldsymbol{f}(z,z^\ast)=\boldsymbol{b}_0$|$\mathcal{D}_{z^\ast}\boldsymbol{f}(z,z^\ast)=\boldsymbol{b}_1$|$M\times1$|
-|$\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)$|$d\boldsymbol{f}=\boldsymbol{B}_0d\boldsymbol{z}+\boldsymbol{B}_1d\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{B}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{f}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{B}_1$|$M\times N$|
-|$\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$d\boldsymbol{f}=\boldsymbol{\beta}_0d\text{vec}(\boldsymbol{Z})+\boldsymbol{\beta}_1d\text{vec}(\boldsymbol{Z}^\ast)$|$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\beta}_0$|$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{f}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\beta}_1$|$M\times NQ$|
-|$\boldsymbol{F}(z,z^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{c}_0dz+\boldsymbol{c}_1dz^\ast$|$\mathcal{D}_{z}\boldsymbol{F}(z,z^\ast)=\boldsymbol{c}_0$|$\mathcal{D}_{z^\ast}\boldsymbol{F}(z,z^\ast)=\boldsymbol{c}_1$|$MP\times1$|
-|$\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{C}_0d\boldsymbol{z}+\boldsymbol{C}_1d\boldsymbol{z}^\ast$|$\mathcal{D}_{\boldsymbol{z}}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_0$|$\mathcal{D}_{\boldsymbol{z}^\ast}\boldsymbol{F}(\boldsymbol{z},\boldsymbol{z}^\ast)=\boldsymbol{C}_1$|$MP\times N$|
-|$\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)$|$d\text{vec}(\boldsymbol{F})=\boldsymbol{\zeta}_0d\boldsymbol{Z}+\boldsymbol{\zeta}_1d\boldsymbol{Z}^\ast$|$\mathcal{D}_{\boldsymbol{Z}}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_0$|$\mathcal{D}_{\boldsymbol{Z}^\ast}\boldsymbol{F}(\boldsymbol{Z},\boldsymbol{Z}^\ast)=\boldsymbol{\zeta}_1$|$MP\times NQ$|
 
 # Complex-Valued Derivatives of Scalar Functions
 
@@ -320,7 +322,30 @@ The capacity of this MIMO channel was derived in (Telatar 1995) as
 
 $$C=\ln\left(\det\left(I_{N_r}+\boldsymbol{HQH}^H\right)\right),$$
 
-where $\boldsymbol{Q}=\mathbb{E}[\boldsymbol{xx}^H]$ is the covariance matrix of $\boldsymbol{x}$.
+where $\boldsymbol{Q}=\mathbb{E}[\boldsymbol{xx}^H]$ is the covariance matrix of $\boldsymbol{x}$. Find the gradient of the capacity with respect to $\boldsymbol{H}$.
+
+First of all, we can calculate the derivative of $C$
+
+$$\begin{aligned}
+  dC\overset{(a)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}d\ \left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^H\right)\right\} \\
+  =&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\left(\boldsymbol{0}+d\ \left(\boldsymbol{HQH}^H\right)\right)\right\}\\
+  \overset{(b)}{=}&\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\boldsymbol{QH}^H\right\}\\
+  &+\text{Tr}\left\{\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}\left(d\ \boldsymbol{H}^H\right)\right\}\\
+  \overset{(c)}{=}&\text{Tr}\left\{\boldsymbol{QH}^H\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}(d\ \boldsymbol{H})\right\}\\
+  &+\text{Tr}\left\{\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\left(d\ \boldsymbol{H}^\ast\right)\right\}.
+\end{aligned}$$
+
+Let's explain the derivation above first. (a) is based on $d\ \ln\det(\boldsymbol{Z})=\text{Tr}\left\{\boldsymbol{Z}^{-1}d\boldsymbol{Z}\right\}$ (Hjorunges 2011, Proposition 3.14). (b) is due to the basic complex differential property $d\boldsymbol{Z}_0\boldsymbol{Z}_1=(d\boldsymbol{Z}_0\boldsymbol{Z}_1+\boldsymbol{Z}_0d\boldsymbol{Z}_1)$ (Hjorungnes 2011, Proposition 3.5)， which can be derived from the "procedure for finding complex differentials" in Section 3.2.1. (c) can be proved by the properties of trace function, $\text{Tr}\{\boldsymbol{AB}\}=\text{Tr}\{\boldsymbol{BA}\}$ and $\text{Tr}\{\boldsymbol{A}^T\}=\text{Tr}\{\boldsymbol{A}\}$.
+
+Note that for a scalar real-valued function, the gradient is defined as the partial derivative with respect to the conjugate (Hjorungnes 2011, Eq. (4.48))
+
+$$\nabla_{\boldsymbol{H}} C=\frac{\partial}{\partial\boldsymbol{H}^*}C=\left(\boldsymbol{Q}^T\boldsymbol{H}^T\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-T}\right)^T=\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}\boldsymbol{HQ}.$$
+
+There are another equivalent expressions of $\nabla_{\boldsymbol{H}}C$. For example, according to the Sylvester's determinant identity, the capacity can be rewritten as
+
+$$C=\ln\left(\det\left(\boldsymbol{I}_{N_r}+\boldsymbol{H}^H\boldsymbol{HQ}\right)\right)$$, resulting in the gradient
+
+$$\nabla_{\boldsymbol{H}}C=\frac{\partial}{\partial\boldsymbol{H}^\ast}f=\boldsymbol{HQ}\left(\boldsymbol{I}_{M_r}+\boldsymbol{HQH}^{H}\right)^{-1}.$$
 
 # References
 
