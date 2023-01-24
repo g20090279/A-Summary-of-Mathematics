@@ -65,6 +65,7 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 | $\det(\boldsymbol{A}^{-1})=1/\det(\boldsymbol{A})$ | |
 | $\det(\boldsymbol{A}^N)=\det(\boldsymbol{A})^N$ | |
 | $\det(\boldsymbol{I}+\boldsymbol{uv}^T)=1+\boldsymbol{u}^T\boldsymbol{v}$ | |
+| $\det(\boldsymbol{I+AB})=\det(\boldsymbol{I+BA})$ | Sylvester's Determiant Theorem |
 
 # Some Definitions
 
@@ -73,8 +74,8 @@ $i$ represents usually the *imaginary unit*, or *imaginary number*. Engineers ty
 | Index | Name of Definition | Mathematical Description |
 | :--- | :--- | :--- |
 | 1 | Complex Scalar | $z=x+iy\in\mathbb{C}$, where the *real part* is $\mathfrak{R}(z)$ and the *imaginary part* is $\mathfrak{I}(z)=y$. |
-| 2 | Real Part | $x=\frac{z+z^\ast}{2}$ |
-| 3 | Imaginary Part| $y=\frac{z-z^\ast}{2i}$ |
+| 2 | Real Part | $\mathfrak{R}(z)=x=\frac{z+z^\ast}{2}$ |
+| 3 | Imaginary Part| $\mathfrak{I}(z)=y=\frac{z-z^\ast}{2i}$ |
 | 4 | Complex Differentials | (complex scalar as example) <br> $dz=dx+idy$, $dz^\ast=dx-idy$<br/>which lead to<br/>$dx=\frac{dz+dz^\ast}{2}$, $dy=\frac{dz-dz^\ast}{2i}$, $dz^\ast=(dz)^\ast$<br/>When $\boldsymbol{Z}$ is a matrix, $\boldsymbol{X}$ and $\boldsymbol{Y}$ are of same size, e.g. $N\times Q$.| 
 | 5 | Analytic Function (asa. Complex Differentiable, Holomorphic, Regular) | The function $f$ is an analytic function if $\lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z)-f(z)}{\Delta z}$ exists for all $z\in\mathcal{D}$, where the domain $\mathcal{D}$ is a subset of $\mathbb{C}$. Analytic function examples: $z^n$, $e^z$, $\ln(z)$, $\sin(z)$, $\cos(z)$. Not analytic function examples: $z^\ast$, $\mathfrak{R}(z)$, $\mathfrak{I}(z)$, any nonconstant purely real-valued function such as $\|z\|$. Nonholomorphic functions can all be written in the form $f(z,z^*)$. |
 | 5.1 | Cauchy-Riemann Equation | (Complex scalar as an example) If $f=u(x,y)+iv(x,y)$ is complex-differentiable (analytic) at $z=x+iy$, then by approaching from real and imaginary axes, we have equations: $\begin{cases}\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.\end{cases}$. This implies $\frac{\partial}{\partial z^\ast}f=0$ for Wirtinger Derivative. |
@@ -225,7 +226,7 @@ by the connection
 
 $$\begin{align}
    \mathcal{D}_{\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^*)&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
-   \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
+   \mathcal{D}_{\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^{\ast})&=\text{vec}^T\left(\frac{\partial}{\partial\boldsymbol{Z}^\ast}f(\boldsymbol{Z},\boldsymbol{Z}^\ast)\right)\\ 
 \end{align}$$
 
 ### Table: Complex-valued derivatives of functions of the type* $f(\boldsymbol{Z},\boldsymbol{Z}^\ast)$. 
@@ -262,46 +263,50 @@ Note:
 
 [back](#T4)
 
-First of all, we prove $\mathcal{D}\_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}\_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
+First of all, we prove $\mathcal{D}_{\boldsymbol{Z}^\ast}f=\left(\mathcal{D}_{\boldsymbol{Z}}f\right)^\ast$. Since $f$ is a real scalar function, we can have from the definition
 
 $$
 \begin{aligned}
-   df&=(\mathcal{D}\_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
-   df&=df^\ast=(\mathcal{D}\_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast)+(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
+   df&=(\mathcal{D}_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}^\ast}f)d\text{vec}(\boldsymbol{Z}^\ast),\\
+   df&=df^\ast=(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})+(\mathcal{D}_{\boldsymbol{Z}}f)^{\ast}d\text{vec}(\boldsymbol{Z}^\ast),\\
 \end{aligned}
 $$
 
-It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}\_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}\_{\boldsymbol{Z}}f)^\ast$, we have
+It is obvious to obtain the result by comparing these two equations. By further transforming the first equation by replacing the $\mathcal{D}_{\boldsymbol{Z}^\ast}f$ by $(\mathcal{D}_{\boldsymbol{Z}}f)^\ast$, we have
 
 $$
-df=2\text{Re}\lbrace(\mathcal{D}\_{\boldsymbol{Z}}f)d\text{vec}(\boldsymbol{Z})\rbrace=2\text{Re}\lbrace(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^{\ast}d\text{vec}(\boldsymbol{Z})\rbrace.
+df=2\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}}f)d\ \text{vec}(\boldsymbol{Z})\rbrace=2\mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^{\ast}d\ \text{vec}(\boldsymbol{Z})\rbrace.
 $$
 
-Inside the $\text{Re}(\cdot)$ function is a row vector multiplied by a column vector, which is can be written as a Euclidean inner product of two column vectors, i.e.
+Inside the $\mathfrak{R}(\cdot)$ function is a row vector multiplied by a column vector, which is can be written as a Euclidean inner product of two column vectors, i.e.
 
 $$\boldsymbol{a}_0^H\boldsymbol{a}_1=\langle\boldsymbol{a}_0,\boldsymbol{a}_1\rangle.$$
 
-Taking the $\text{Re}(\cdot)$ function on both sides, we can write it as
+Taking the $\mathfrak{R}(\cdot)$ function on both sides, we can write it as
 
-$$\text{Re}\lbrace\boldsymbol{a}_0^H\boldsymbol{a}_1\rbrace=\left\langle\begin{bmatrix}
-  \text{Re}\lbrace\boldsymbol{a}_0\rbrace \\
-  \text{Im}\lbrace\boldsymbol{a}_0\rbrace
+$$\mathfrak{R}\lbrace\boldsymbol{a}_0^H\boldsymbol{a}_1\rbrace=\left\langle\begin{bmatrix}
+  \mathfrak{R}\lbrace\boldsymbol{a}_0\rbrace \\
+  \mathfrak{I}\lbrace\boldsymbol{a}_0\rbrace
 \end{bmatrix},\begin{bmatrix}
-  \text{Re}\lbrace\boldsymbol{a}_1\rbrace \\
-  \text{Im}\lbrace\boldsymbol{a}_1\rbrace
+  \mathfrak{R}\lbrace\boldsymbol{a}_1\rbrace \\
+  \mathfrak{I}\lbrace\boldsymbol{a}_1\rbrace
 \end{bmatrix}\right\rangle.$$
 
 Therefore, the differential of $f$ becomes
 
 $$df=2\left\langle\begin{bmatrix}
-  \text{Re}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace \\
-  \text{Im}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace 
+  \mathfrak{R}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace \\
+  \mathfrak{I}\lbrace(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T\rbrace 
 \end{bmatrix},\begin{bmatrix}
-  \text{Re}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace \\
-  \text{Im}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace 
+  \mathfrak{R}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace \\
+  \mathfrak{I}\lbrace d\text{vec}(\boldsymbol{Z})\rbrace 
 \end{bmatrix}\right\rangle.$$
 
-According to the *Cauchy-Schwartz inequality*, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}\_0=k\boldsymbol{a}\_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}\_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
+According to the *Cauchy-Schwartz inequality*, the maximum inner product of vector $\boldsymbol{a}_0$ and $\boldsymbol{a}_1$ is achieved when they are at the same direction, i.e. $\boldsymbol{a}_0=k\boldsymbol{a}_1$, where $k$ is a constant. On the contrary, the minimum is achieved when they are at the opposite direction. Hence, the maximum value of $df$ occurs when $d\text{vec}(\boldsymbol{Z})=\alpha(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\alpha>0$, and the minimum when $d\text{vec}(\boldsymbol{Z})=-\beta(\mathcal{D}_{\boldsymbol{Z}^\ast}f)^T$ for $\beta>0$.
+
+It is worth to note that the inner product for complex vectors works only for Hermitian but not transpose, i.e., for $\boldsymbol{a},\boldsymbol{b}\in\mathbb{C}^{N\times 1}$,
+
+$$<\boldsymbol{a},\boldsymbol{b}>=\boldsymbol{a}^H\boldsymbol{b}\neq\boldsymbol{a}^T\boldsymbol{b}.$$
 
 # Appendix: Example
 
@@ -316,3 +321,6 @@ The capacity of this MIMO channel was derived in (Telatar 1995) as
 $$C=\ln\left(\det\left(I_{N_r}+\boldsymbol{HQH}^H\right)\right),$$
 
 where $\boldsymbol{Q}=\mathbb{E}[\boldsymbol{xx}^H]$ is the covariance matrix of $\boldsymbol{x}$.
+
+# References
+
