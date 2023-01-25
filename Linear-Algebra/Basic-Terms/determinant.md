@@ -1,4 +1,7 @@
-[determinant / 行列式] [Laplace Expansion] [minor]
+- Topic: Determinant (行列式)
+- Last revised: Jan 25, 2023
+
+---
 
 # Introduction and Definition
 
@@ -114,7 +117,7 @@ where $A,B$ are square matrices of the same dimension.
 
 We can notice that although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$. This may be proved using elementary operations that row-reduce both $A$ and $B$.
 
-## Weinstein-Aronszajn Determinant Identity
+## Weinstein-Aronszajn (or Sylvester?) Determinant Identity
 
 $$\det(1+AB)=\det(1+BA),$$
 
@@ -134,6 +137,12 @@ If $D$ is invertible,
 
 $$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(D)\det(A-BD^{-1}C).$$
 
+# Insightful Meaning of Determinant
+
+## Geometric meaning (Hannah, 1996)
+
 # References
 
-Horn, R. A., & Johnson, C. R. (2013). *Matrix Analysis (2nd ed.)*. Cambridge University Press.
+- Hannah, J. (1996). A Geometric Approach to Determinants. The American Mathematical Monthly, vol. 103, no. 5. doi:https://doi.org/10.1080/00029890.1996.12004759.
+
+- Horn, R. A., & Johnson, C. R. (2013). *Matrix Analysis (2nd ed.)*. Cambridge University Press.

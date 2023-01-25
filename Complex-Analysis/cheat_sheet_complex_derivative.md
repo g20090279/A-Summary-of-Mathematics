@@ -149,13 +149,12 @@ Take the matrix form $\boldsymbol{Z}$ as example.
 |$d\boldsymbol{Z}^\ast=(d\boldsymbol{Z})^\ast$|conjugate|
 |$d\boldsymbol{Z}^{H}=(d\boldsymbol{Z})^H$|complex conjugate|
 |$d\det(\boldsymbol{Z})=\text{Tr}\lbrace\boldsymbol{C}^T(\boldsymbol{Z})d\boldsymbol{Z}\rbrace=\det(\boldsymbol{Z})\text{Tr}\{\boldsymbol{Z}^{-1}d\boldsymbol{Z}\}$|where $\boldsymbol{C}(\boldsymbol{Z})$ is a $N$-size square matrix containing cofactors. determinant and trace|
-| $d\ln(\det(\boldsymbol{Z}))=\text{Tr}\{Z^{-1}d\boldsymbol{Z}\}$ |
+| $d\ln(\det(\boldsymbol{Z}))=\text{Tr}\{\boldsymbol{Z}^{-1}d\boldsymbol{Z}\}$ |
 
 # Advanced Complex Differential Equations
 
 | Equations | Comments |
 |:---:|:---:|
-|$\frac{\partial}{\partial X}\ln\det X$||
 
 # Complex-Valued Derivatives of Scalar Functions
 
