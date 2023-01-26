@@ -15,7 +15,7 @@ First of all, the covariance matrix $Q$ is always positive semi-definite. It is 
 
 $$\begin{aligned}
    \boldsymbol{a}^HQ\boldsymbol{a}&=\mathbb{E}\left[\boldsymbol{a}^H(\boldsymbol{s}-\bar{\boldsymbol{s}})(\boldsymbol{s}-\bar{\boldsymbol{s}})^H\boldsymbol{a}\right]\\
-   &=
+   &=\mathbb{E}\left[\left((\boldsymbol{s}-\bar{\boldsymbol{s}})^H\boldsymbol{a}\right)^H\left((\boldsymbol{s}-\bar{\boldsymbol{s}})^H\boldsymbol{a}\right)\right]\geq0.
 \end{aligned}$$
 
 Secondly, the overall combined channel ($HQH^H$) can always be decomposed by SVD, and the signular values should be all nonnegative, since a channel with negative gain (negative singular value) has no physical meaning. Therefore, with $I$, $X$ should be positive-definite matrix.
@@ -32,4 +32,4 @@ Secondly, the overall combined channel ($HQH^H$) can always be decomposed by SVD
 
 # References
 
-CBrown, J. W. & Churchill, R. V., (2014). Complex variables and applications, 9 Edition. McGraw-Hill Education.
+Brown, J. W. & Churchill, R. V., (2014). Complex variables and applications, 9 Edition. McGraw-Hill Education.
