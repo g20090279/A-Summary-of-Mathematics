@@ -1,4 +1,7 @@
-[Singularity] [Nonsingularity]
+- Key words: Singularity, Nonsingularity
+- Last revised: Mar. 24, 2023
+
+---
 
 A matrix is *nonsingular* if it produces the output 0 only for the input 0. Otherwise, it is *singular*.
 

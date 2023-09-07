@@ -1,3 +1,8 @@
+- Key words: Back Substitution
+- Last revised: Mar. 24, 2023
+
+---
+
 The process of solving a linear system of equations that has been transformed into row-echelon form. The last equation is solved first, then the next-to-last, etc.
 
 Example: To solve a linear system where $x=[x_1,x_2,x_3]^T$ is the vector unknown variable

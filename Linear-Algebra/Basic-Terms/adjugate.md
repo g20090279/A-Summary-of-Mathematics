@@ -1,4 +1,7 @@
-[adjugate] [adjugate matrix] [classical adjoint] [伴随矩阵]
+- Key words: adjugate, adjugate matrix, classical adjoint, 伴随矩阵
+- Last revised: Mar. 24, 2023
+
+---
 
 # Defition of Adjugate
 

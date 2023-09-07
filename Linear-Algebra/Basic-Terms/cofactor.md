@@ -1,4 +1,7 @@
-[cofactor] [代数余子式] [cofactor matrix] [matrix of cofactor] [余因子矩阵]
+- Key words: cofactor, 代数余子式, cofactor matrix, matrix of cofactor, 余因子矩阵
+- Last revised: Mar. 24, 2023
+
+---
 
 # Definition of Cofactor
 

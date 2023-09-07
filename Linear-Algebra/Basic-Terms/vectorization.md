@@ -1,4 +1,4 @@
-[vectorization] [向量化]
+- Key words: vectorization, 向量化
 
 # Definition of Vectorization
 
