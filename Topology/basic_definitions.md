@@ -17,7 +17,7 @@
 - **($C^{k}$)** Let $p=(p^1,\dots,p^n)$ be a point in an open set $\mathcal{U}$ in $\mathbb{R}^n$, and $k$ be a nonnegative integer. A real-valued function $f:U\rightarrow\mathbb{R}$ is said to be $C^{k}$ at $p\in \mathcal{U}$ if its partial derivatives
   $$\frac{\partial^{j}f}{\partial x^{i_1}\dots\partial x^{i_j}}$$
   of all orders $j\leq k$ exist and are continuous at $p$ (Tu 2011, Def. 1.1).
-- **($C^{\infty}$ / Smooth)** The function $f:U\rightarrow\mathbb{R}$ is $C^{\infty}$ at $p$ if it is $C^{k}$ for all $k\geq0$.
+- **($C^{\infty}$ / Smooth)** The function $f:U\rightarrow\mathbb{R}$ is $C^{\infty}$ at $p$ if it is $C^{k}$ for all $k\geq0$ (Tuu 2011, Def. 1.1).
 
 ## On A Manifold
 
@@ -26,6 +26,7 @@
   called *coordinate representation of $F$*. ($\hat{F}$ is the equivalent function from one chart in one manifold to another chart in another manifold.) If $\hat{F}$ is of class $C^{\infty}$ at the chart $\phi_1(x)$, $F$ is differentiable or smooth (Absil 2008, Sec. 3.2). A figure for illustration can be found in Fig. 6.3 in (Tu, 2011).
   - The definition of the smoothness of a map $F:\mathcal{M}_1\rightarrow\mathcal{M}_2$ at a point is independent of the choice of charts.
 - **(Diffeomorphism)** A *diffeomorphism* os manifolds is a bijective $C^{\infty}$ map $F:N\rightarrow M$ whose inverse $F^{-1}$ is also $C^{\infty}$ (Tu 2011, Sec. 6.3).
+- **(Immersion & Submersion)** Let $F:\mathcal{M}_1\rightarrow\mathcal{M}_2$ be a differentiable function from a manifold $\mathcal{M}_1$ of dimension $n_1$ into a manifold $\mathcal{M}_2$ of dimension $n_2$. Given a point $x$ of $\mathcal{M}_1$, the rank of $F$ at $x$ is the dimension of the range of the differential of $\hat{F}$ at $\phi_1(x)$, $\text{D}\hat{F}(\phi_1(x))[\dot]:\mathbb{R}^{d_1}\rightarrow\mathbb{R}^{d_2}$, where $\hat{F}$ is a coordinate representation. The function $F$ is called an *immersion* if its rank is equal to $d_1$ at each point of its domain (hence $d_1\leq d_2$). It is called a *submersion* if its rank is equal to $d_2$ at each point of its domain (hence $d_1\leq d_2$).
 
 # Definitions in Topology
 

@@ -5,11 +5,11 @@
 
 # Introduction and Definition
 
-Ofen it is useful to use one single number to characterize a multivariate phenomenon. Determinant is one example of this.
+Often is it useful to use one single number to characterize a multivariate phenomenon. Determinant is one example of this.
 
 Consider a square matrix $A$ with size $n\times n$. $A$ can be a real matrix $A\in\mathbb{R}^{n\times n}$ or a complex matrix $A\in\mathbb{C}^{n\times n}$.
 
-> **Definition:** The determinant is a function of a square matrix $A$, whose output is a scalar value.
+**Definition:** The determinant is a function of a square matrix $A$, whose output is a scalar value.
 
 The determinant is usually denoted as $\mathrm{det}A$, or $\mathrm{det}(A)$, or $|A|$.
 
@@ -31,10 +31,13 @@ First of all, let's define
 
 $$A=\begin{bmatrix}1&4&3\\2&\boxed{6}&9\\8&7&5\end{bmatrix},\quad a_{2,2}=5,\quad A_{2,2}=\begin{bmatrix}1&3\\8&5\end{bmatrix}.$$
 
-> **Laplace Expansion** of $i$-th row
-> $$\det(A)=\sum_{j=1}^{n}(-1)^{i+j}a_{i,j}\det(A_{i,j})$$
-> **Laplace Expansion** of $j$-th column
-> $$\det(A)=\sum_{i=1}^{n}(-1)^{i+j}a_{i,j}\det(A_{i,j})$$
+**Laplace Expansion** of $i$-th row
+
+$$\det(A)=\sum_{j=1}^{n}(-1)^{i+j}a_{i,j}\det(A_{i,j})$$
+
+**Laplace Expansion** of $j$-th column
+
+$$\det(A)=\sum_{i=1}^{n}(-1)^{i+j}a_{i,j}\det(A_{i,j})$$
 
 ### Example:
 
@@ -88,54 +91,42 @@ $$\begin{aligned}\det\left(\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_
 
 The determinant of a matrix is the product of its eigenvalues.
 
-> Assume $\lambda_1,\lambda_2,\cdots,\lambda_n$ are the eigenvalues of the $n$-by-$n$ matrix A.
-> $$\det(A)=\prod_{i=1}^{n}\lambda_i.$$
+Assume $\lambda_1,\lambda_2,\cdots,\lambda_n$ are the eigenvalues of the $n$-by-$n$ matrix A.
+
+$$\det(A)=\prod_{i=1}^{n}\lambda_i.$$
 
 # Properties of Determinant
 
 The determinant of a square matrix obey a large number of important identities.
 
-## Determinant of an identity matrix is 1.
+- Determinant of an identity matrix is 1, $\det(I)=1.$
+- Determinant of an upper triangular or a lower triangular matrix is the product of the main diagonal.
 
-$$\det(I)=1.$$
+   $$\det\left(\begin{bmatrix}a_{11}&a_{12}&a_{13}\\0&a_{22}&a_{23}\\0&0&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
 
-## Determinant of an upper triangular or a lower triangular matrix is the product of the main diagonal.
+   $$\det\left(\begin{bmatrix}a_{11}&0&0\\a_{21}&a_{22}&0\\a_{31}&a_{32}&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
 
-$$\det\left(\begin{bmatrix}a_{11}&a_{12}&a_{13}\\0&a_{22}&a_{23}\\0&0&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
+- Determinants of its transpose and itself are the same, $\det(A)=\det(A^T)$.
+- Multiplicative function, $\det(AB)=\det(A)\det(B)$, where $A,B$ commute.
+  
+  We can notice that although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$. This may be proved using elementary operations that row-reduce both $A$ and $B$.
+- If $A$ is unitary, te determinant is either 1 or -1, since $\det(A^TA)=\det(A^T)\det(A)=\det(A)^2=\det(I)=1$.
 
-$$\det\left(\begin{bmatrix}a_{11}&0&0\\a_{21}&a_{22}&0\\a_{31}&a_{32}&a_{33}\end{bmatrix}\right)=a_{11}a_{22}a_{33}.$$
+- Weinstein-Aronszajn (or Sylvester?) Determinant Identity $\det(I_n+AB)=\det(I_m+BA)$, where $A$ is an $n\times m$ matrix and $B$ is an $m\times n$ matrix.
 
-## Determinants of its transpose and itself are the same.
+   This can be proved by applying multiplicative property $A=\begin{bmatrix}I_n&-A\\B&I_m\end{bmatrix}$ and $B=\begin{bmatrix}I_n&A\\0&I_m\end{bmatrix}$.
 
-$$\det(A)=\det(A^T).$$
+   > This identity, which coverts an $n\times n$ determinant into an $m\times m$ determinant, is very useful in random matrix theory, particularly in regimes in which $m$ is much smaller than $n$. [(Terry Tao)](https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/)
 
-## Multiplicative function
+- Determinant by applying Schur complement
 
-$$\det(AB)=\det(A)\det(B),$$
+   If $A$ is invertible,
 
-where $A,B$ are square matrices of the same dimension.
+   $$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(A)\det(D-CA^{-1}B).$$
 
-We can notice that although the commutative property of matrix multiplication doesn't hold, i.e. $AB\neq BA$, their determinats are the same $\det(AB)=\det(A)\det(B)=\det(BA)=\det(B)\det(A)$. This may be proved using elementary operations that row-reduce both $A$ and $B$.
+   If $D$ is invertible,
 
-## Weinstein-Aronszajn (or Sylvester?) Determinant Identity
-
-$$\det(1+AB)=\det(1+BA),$$
-
-where $A$ is an $n\times m$ matrix and $B$ is an $m\times n$ matrix.
-
-This can be proved by applying multiplicativity with $A=\begin{bmatrix}I_n&-A\\B&I_m\end{bmatrix}$ and $B=\begin{bmatrix}I_n&A\\0&I_m\end{bmatrix}$.
-
-> This identity, which coverts an $n\times n$ determinant into an $m\times m$ determinant, is very useful in random matrix theory, particularly in regimes in which $m$ is much smaller than $n$. [(Terry Tao)](https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/)
-
-## Determinant by applying Schur complement
-
-If $A$ is invertible,
-
-$$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(A)\det(D-CA^{-1}B).$$
-
-If $D$ is invertible,
-
-$$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(D)\det(A-BD^{-1}C).$$
+   $$\det\left(\begin{bmatrix}A&B\\C&D\end{bmatrix}\right)=\det(D)\det(A-BD^{-1}C).$$
 
 # Insightful Meaning of Determinant
 
